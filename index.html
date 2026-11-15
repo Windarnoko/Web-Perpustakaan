@@ -1,303 +1,250 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Kota Madiun</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perpustakaan Kota Madiun</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
-<header>
-    <div class="logo">
-        <small>DINAS PERPUSTAKAAN DAN KEARSIPAN</small>
-        <h2>KOTA MADIUN</h2>
-    </div>
+  <header class="header">
+    <div class="header-isi">
 
-    <nav>
-        <a class="active" href="#">Beranda</a>
+      <img src="gambar/logo.png" alt="Logo Kota Madiun" class="logo">
+
+      <nav class="menu">
+        <a href="#" >Beranda</a>
         <a href="#">Koleksi</a>
         <a href="#">Katalog</a>
         <a href="#">Layanan</a>
-    </nav>
+      </nav>
 
-    <div class="profile">●</div>
-</header>
+      <a href="#" class="akun"></a>
+    </div>
+  </header>
 
-<main>
 
-<!-- HERO SECTION -->
-<section class="hero">
+  <section class="hero">
+    <div class="hero-kiri">
+      <p class="label-kecil">PERPUSTAKAAN KOTA MADIUN</p>
+      <h1>
+        <span class="biru">Jelajahi</span> Ribuan Buku,<br>
+        Temukan <span class="biru">Duniamu</span>
+      </h1>
+      <hr>
 
-    <div class="hero-content">
-        <small>PERPUSTAKAAN KOTA MADIUN</small>
+      <div class="kotak-cari">
+        <input type="text" placeholder="Cari judul, penulis, atau topik...">
+        <button>Cari</button>
+      </div>
 
-        <h1>
-            Jelajahi <span>Ribuan Buku,</span><br>
-            Temukan <span>Duniamu</span>
-        </h1>
-
-        <div class="search">
-            <input type="text"
-            placeholder="Cari Judul Buku, Pengarang, ISBN">
-
-            <button>Cari</button>
-        </div>
-
-        <div class="suggestions">
-            <span>Pencarian rekomendasi</span>
-    
-        </div>
+      <div class="populer">
+        <span>Pencarian populer:</span>
+        <a href="#">Pendidikan</a>
+        <a href="#">Pengetahuan</a>
+        <a href="#">Kesehatan</a>
+      </div>
     </div>
 
-    <div class="hero-image">
-        <!-- TEMPAT GAMBAR -->
+    <div class="hero-kanan">
+      foto gedung
+      <img src="gambar/gedung.jpg" alt="Gedung Perpustakaan">
+      <p>📍 Jl. Pahlawan No. 28, Madiun</p>
+    </div>
+  </section>
+
+  <section class="akses">
+    <h2 class="judul-kiri">Akses Cepat</h2>
+    <div class="akses-kartu">
+      <div class="kartu-kecil">
+        <div class="ikon"></div>
+        <p>Peminjaman Buku</p>
+      </div>
+      <div class="kartu-kecil">
+        <div class="ikon"></div>
+        <p>E-book Digital</p>
+      </div>
+      <div class="kartu-kecil">
+        <div class="ikon"></div>
+        <p>Perpanjangan Peminjaman</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="jadwal">
+    <h2 class="judul-kiri">Jadwal jam buka perpustakaan</h2>
+
+    <div class="jadwal-kartu">
+      <div class="kotak-jadwal biru-tua">
+        <h4>Senin - Kamis</h4>
+        <p>07.30 s/d 15.30</p>
+      </div>
+
+      <div class="kotak-jadwal">
+        <h4>Jumat</h4>
+        <p>07.30 s/d 11.00 &amp; 13.00 s/d 14.00</p>
+      </div>
+
+      <div class="kotak-jadwal">
+        <span class="badge-buka">● Buka sekarang</span>
+        <h4>Sabtu - Minggu</h4>
+        <p>08.00 s/d 15.00</p>
+      </div>
     </div>
 
-</section>
+    <p class="reservasi">Reservasi online, atau baca e-book sekarang juga</p>
 
-<!-- AKSES CEPAT -->
-<section class="quick">
-
-    <h3>Akses Cepat</h3>
-
-    <div class="quick-container">
-
-        <div class="quick-card">
-            <p>Peminjaman Buku</p>
-        </div>
-
-        <div class="quick-card">
-            <p>E-book Digital</p>
-        </div>
-
-        <div class="quick-card">
-            <p>Perpanjang Peminjaman</p>
-        </div>
-
+    <div class="statistik">
+      <div>
+        <h3>60.000+</h3>
+        <p>koleksi buku di rak</p>
+      </div>
+      <div>
+        <h3>9.000+</h3>
+        <p>koleksi e-book</p>
+      </div>
+      <div>
+        <h3>500.000+</h3>
+        <p>pengunjung setiap tahun</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- JADWAL OPERASIONAL -->
-<section class="hours">
+  buku populer
+  <div class="pita">
+    <small>KATALOG TERPOPULER DAN PILIHAN</small>
+    <h2>Buku Terpopuler Siap Pinjam Online Hari Ini</h2>
+  </div>
 
-    <h3>Jadwal jam buka perpustakaan</h3>
-
-    <div class="hours-container">
-
-        <div class="hour-card active">
-            <b>Senin - Kamis</b>
-            <p>07:30 s/d 15:00</p>
-        </div>
-
-        <div class="hour-card">
-            <b>Jumat</b>
-            <p>
-                07:30 s/d 11:00<br>
-                13:00 s/d 14:00
-            </p>
-        </div>
-
-        <div class="hour-card">
-            <b>Sabtu - Minggu</b>
-            <p>08:00 s/d 15:00</p>
-        </div>
-
+  <section class="populer-buku">
+    <div class="baris-buku">
+      untuk cover buku
+      <img src="gambar/cover1.jpg" alt="Cover buku 1">
+      <img src="gambar/cover2.jpg" alt="Cover buku 2">
+      <img src="gambar/cover3.jpg" alt="Cover buku 3">
+      <img src="gambar/cover4.jpg" alt="Cover buku 4">
+      <img src="gambar/cover5.jpg" alt="Cover buku 5">
+      <img src="gambar/cover6.jpg" alt="Cover buku 6">
+      <span class="panah">&gt;</span>
     </div>
 
-    <span class="status">● Buka sekarang</span>
-
-</section>
-
-<!-- STATISTIK -->
-<section class="statistics">
-
-    <p>Reservasi online, atau baca e-book seketika</p>
-
-    <div class="stats-container">
-
-        <div>
-            <h2>60.000+</h2>
-            <p>Koleksi buku di rak</p>
-        </div>
-
-        <div>
-            <h2>9.000+</h2>
-            <p>Koleksi e-book</p>
-        </div>
-
-        <div>
-            <h2>500.000+</h2>
-            <p>Pengunjung setahun terakhir</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- BUKU TERPOPULER -->
-<section class="section-title">
-    <small>KATALOG SIRKULASI UNGGULAN & SIAP PINJAM</small>
-    <h3>Buku Terpopuler Siap Pinjam Online Hari Ini</h3>
-</section>
-
-<section class="popular">
-
-    <div class="image-placeholder popular-image">
-        <!-- TEMPAT GAMBAR BUKU POPULER -->
+    <div class="titik">
+      <span class="aktif"></span>
+      <span></span>
+      <span></span>
     </div>
 
-    <a href="#">Lihat Semua</a>
+    <a href="#" class="lihat-semua">Lihat Semua</a>
+  </section>
 
-</section>
+  ruang fasilitas
+  <div class="pita">
+    <small>FASILITAS DAN LAYANAN</small>
+    <h2>Ruang Literasi Ramah Semua Generasi</h2>
+  </div>
 
-<!-- FASILITAS -->
-<section class="section-title">
-    <small>FASILITAS LAYANAN PUBLIK</small>
-    <h3>Ruang Literasi Ramah Semua Generasi</h3>
-</section>
-
-<section class="facilities">
-
-    <div class="facility-card">
-
-        <div class="image-placeholder">
-            <!-- TEMPAT GAMBAR ALUN-ALUN -->
-        </div>
-
-        <h4>Alun-Alun Kota Madiun</h4>
-
-        <p>
-            Ruang terbuka hijau yang menjadi pusat aktivitas
-            masyarakat untuk bersantai, berolahraga,
-            dan menikmati suasana kota.
-        </p>
-
+  <section class="fasilitas">
+    <div class="kartu-fasilitas">
+      <img src="gambar/fasilitas1.jpg" alt="Fasilitas 1">
+      <h4>Alun-Alun Kota Madiun</h4>
+      <p>Ruang terbuka hijau yang nyaman untuk membaca, bersantai, dan menikmati suasana kota.</p>
     </div>
 
-    <div class="facility-card">
-        <h4>Armada Mobil Pintar Keliling</h4>
-        <p>
-            Layanan perpustakaan keliling yang menyediakan
-            berbagai koleksi buku untuk meningkatkan
-            minat baca masyarakat.
-        </p>
+    <div class="kartu-fasilitas">
+      <img src="gambar/fasilitas2.jpg" alt="Fasilitas 2">
+      <h4>Armada Mobil Pintar Keliling</h4>
+      <p>Layanan perpustakaan keliling yang menjangkau berbagai sudut kota untuk masyarakat luas.</p>
     </div>
 
-    <div class="facility-card">
-        <h4>Pojok Ramah Anak</h4>
-        <p>Ruang khusus yang menyediakan fasilitas membaca dan belajar bagi anak-anak dengan suasana nyaman.</p>
+    <div class="kartu-fasilitas">
+      <img src="gambar/fasilitas3.jpg" alt="Fasilitas 3">
+      <h4>Pojok Ramah Anak</h4>
+      <p>Ruang khusus anak untuk membaca dan belajar bersama dengan suasana yang menyenangkan.</p>
     </div>
-</section>
+  </section>
 
-
-<section class="section-title">
+  buku baru
+  <div class="pita">
     <small>KOLEKSI TERBARU</small>
-    <h3>Buku baru datang bulan ini</h3>
-</section>
+    <h2>Buku baru datang bulan ini</h2>
+  </div>
 
-<section class="books">
-    <div class="book-card">
-        <h4>Zujuh</h4>
-        <p>Abdul Rasyid B Damanik</p>
-
-        <div class="book-actions">
-            <span>Available</span>
-            <button></button>
-            <button class="add">+</button>
-        </div>
-
-    </div>
-
-    <div class="book-card">
-
-        <div class="image-placeholder">
-            <!-- TEMPAT COVER BUKU -->
-        </div>
-
-        <h4>Kiri Sampai Sini</h4>
-        <p>Faroz Zamzami</p>
-
-        <div class="book-actions">
-            <span>Available</span>
-            <button></button>
-            <button class="add">+</button>
-        </div>
-
-    </div>
-
-    <div class="book-card">
-
-        <div class="image-placeholder">
-            <!-- TEMPAT COVER BUKU -->
-        </div>
-
-        <h4>Pulang</h4>
-        <p>Tere Liye</p>
-
-        <div class="book-actions">
-            <span>Available</span>
-            <button></button>
-            <button class="add">+</button>
-        </div>
-
-    </div>
-
-    <a href="#" class="see-all">Lihat Semua</a>
-
-</section>
-
-</main>
-
-<!-- FOOTER -->
-<footer>
-
-    <div class="footer-content">
-
+  <section class="buku-baru">
+    <div class="kartu-buku">
+      <span class="badge-baru">Baru</span>
+      <img src="gambar/baru1.jpg" alt="Tujuh">
+      <h4>Tujuh</h4>
+      <p class="penulis">Penulis Buku Tujuh</p>
+      <div class="bawah-kartu">
+        <span class="status">Tersedia</span>
         <div>
-            <h3>Tentang Kami</h3>
-
-            <p>
-                Perpustakaan Kota Madiun merupakan layanan
-                informasi dan literasi yang menyediakan
-                berbagai koleksi bacaan serta fasilitas
-                edukatif untuk masyarakat. Kami berkomitmen
-                meningkatkan minat baca dan menciptakan
-                ruang literasi yang nyaman bagi semua generasi.
-            </p>
+          <button class="tombol-bulat">❤</button>
+          <button class="tombol-bulat oranye">+</button>
         </div>
-
-        <div>
-            <h3>Hubungi Kami</h3>
-
-            <p>Kontak: +6289671954063</p>
-            <p>Email: perpusarsip.madiunkota@gmail.com</p>
-        </div>
-
-        <div>
-            <h3>Link Terkait</h3>
-
-            <div class="related-images">
-                <div class="image-placeholder"></div>
-                <div class="image-placeholder"></div>
-                <div class="image-placeholder"></div>
-                <div class="image-placeholder"></div>
-            </div>
-
-        </div>
-
+      </div>
     </div>
 
-    <div class="copyright">
-        Copyright © 2019 Dinas Perpustakaan Dan Kearsipan Kota Madiun
+    <div class="kartu-buku">
+      <span class="badge-baru">Baru</span>
+      <img src="gambar/baru2.jpg" alt="Kiri Sampai Sini">
+      <h4>Kiri Sampai Sini</h4>
+      <p class="penulis">Penulis Kiri Sampai Sini</p>
+      <div class="bawah-kartu">
+        <span class="status">Tersedia</span>
+        <div>
+          <button class="tombol-bulat">❤</button>
+          <button class="tombol-bulat oranye">+</button>
+        </div>
+      </div>
     </div>
 
-</footer>
+    <div class="kartu-buku">
+      <span class="badge-baru">Baru</span>
+      <img src="gambar/baru3.jpg" alt="Pulang">
+      <h4>Pulang</h4>
+      <p class="penulis">Tere Liye</p>
+      <div class="bawah-kartu">
+        <span class="status">Tersedia</span>
+        <div>
+          <button class="tombol-bulat">❤</button>
+          <button class="tombol-bulat oranye">+</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a href="#" class="lihat-semua kanan">Lihat Semua</a>
+
+ <! footer >
+  <footer class="footer">
+    <div class="footer-isi">
+      <div class="footer-kolom lebar">
+        <h4>Tentang Kami</h4>
+        <p>Perpustakaan Kota Madiun menyediakan layanan informasi dan literasi yang memudahkan berbagai kalangan masyarakat untuk membaca, belajar, dan meminjam koleksi buku secara mudah.</p>
+      </div>
+
+      <div class="footer-kolom">
+        <h4>Hubungi Kami</h4>
+        <p>Kontak: +62 812 3456 7890</p>
+        <p>Email: perpustakaan@madiunkota.go.id</p>
+      </div>
+
+      <div class="footer-kolom">
+        <h4>Link Terkait</h4>
+         <! gambar link >
+        <div class="logo-footer">
+          <img src="gambar/link1.png" alt="Link 1">
+          <img src="gambar/link2.png" alt="Link 2">
+          <img src="gambar/link3.png" alt="Link 3">
+          <img src="gambar/link4.png" alt="Link 4">
+        </div>
+      </div>
+    </div>
+
+    <p class="copyright">Copyright © 2026 Dinas Perpustakaan dan Kearsipan Kota Madiun</p>
+  </footer>
 
 </body>
 </html>
