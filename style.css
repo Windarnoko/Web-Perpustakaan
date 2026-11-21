@@ -1,3 +1,4 @@
+/*  awal  */
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +25,7 @@ img {
   color: #2b5797;
 }
 
+/*  HEADER  */
 .header {
   border-bottom: 1px solid #dddddd;
   padding: 15px 0;
@@ -63,6 +65,7 @@ img {
   font-size: 20px;
 }
 
+/* hero */
 .hero {
   width: 90%;
   max-width: 1600px;
@@ -128,7 +131,7 @@ img {
 }
 
 .populer a {
-  background-color: #eeeeee;
+  background-color: #e3dddd;
   padding: 4px 12px;
   border-radius: 8px;
 }
@@ -154,6 +157,7 @@ img {
   margin-top: 8px;
 }
 
+/* cepat akses */
 .akses {
   width: 90%;
   max-width: 1600px;
@@ -173,22 +177,29 @@ img {
 
 .kartu-kecil {
   width: 170px;
-  height: 130px;
+  min-height: 130px;
   border: 1px solid #cccccc;
   border-radius: 10px;
   text-align: center;
-  padding-top: 15px;
+  padding: 15px 10px;
 }
 
 .kartu-kecil .ikon {
-  font-size: 34px;
   margin-bottom: 8px;
+}
+
+.kartu-kecil img {
+  width: 75px;
+  height: px;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
 .kartu-kecil p {
   font-size: 13px;
 }
 
+/*  JADWAL  */
 .jadwal {
   width: 90%;
   max-width: 1600px;
@@ -263,6 +274,7 @@ img {
   margin-top: 4px;
 }
 
+/*  PITA BIRU (judul section)  */
 .pita {
   background-color: #003366;
   color: white;
@@ -279,6 +291,7 @@ img {
   font-size: 22px;
 }
 
+/*  BUKU TERPOPULER  */
 .populer-buku {
   width: 90%;
   max-width: 1600px;
@@ -340,6 +353,7 @@ img {
   padding-right: 0;
 }
 
+/*  FASILITAS  */
 .fasilitas {
   width: 90%;
   max-width: 1600px;
@@ -377,6 +391,7 @@ img {
   line-height: 1.5;
 }
 
+/*  BUKU BARU  */
 .buku-baru {
   width: 90%;
   max-width: 1600px;
@@ -459,6 +474,7 @@ img {
   height: 28px;
 }
 
+/*  FOOTER  */
 .footer {
   background-color: #003366;
   color: white;
