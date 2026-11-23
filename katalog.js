@@ -8,7 +8,18 @@ const filterTahun = document.querySelector('#filter-tahun');
 const urutkanKatalog = document.querySelector('#urutkan-katalog');
 const katalogJumlah = document.querySelector('.katalog-jumlah');
 const katalogKosong = document.querySelector('.katalog-kosong');
+const jenisAwal = new URLSearchParams(window.location.search).get('jenis');
 let tipeAktif = 'semua';
+
+if (katalogTabs.some((tab) => tab.dataset.tipe === jenisAwal)) {
+  tipeAktif = jenisAwal;
+}
+
+katalogTabs.forEach((tab) => {
+  const aktif = tab.dataset.tipe === tipeAktif;
+  tab.classList.toggle('aktif', aktif);
+  tab.setAttribute('aria-pressed', String(aktif));
+});
 
 // Gandakan data buku yang tersedia agar grid terisi 6 kolom selama 5 baris.
 const katalogItemsAwal = katalogItems.slice();
