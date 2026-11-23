@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Buku - Perpustakaan Kota Madiun</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="data-buku.js" defer></script>
+  <script src="koleksi-store.js" defer></script>
+  <script src="detail-buku.js" defer></script>
+  <script src="koleksi-ui.js" defer></script>
+</head>
+<body class="halaman-detail-buku">
+  <!-- Header dan navigasi -->
+  <header class="header">
+    <div class="header-isi">
+      <a href="index.html" aria-label="Beranda Perpustakaan Kota Madiun">
+        <img src="image/logo.webp" alt="Logo Kota Madiun" class="logo">
+      </a>
+      <nav class="menu" aria-label="Navigasi utama">
+        <a href="index.html">Beranda</a>
+        <a href="koleksi.html">Koleksi</a>
+        <a href="katalog.html">Katalog</a>
+        <a href="#">Layanan</a>
+      </nav>
+      <a href="#" class="akun" aria-label="Profil pengguna" title="Profil pengguna">
+        <img src="image/profil.webp" alt="Foto profil" class="foto-profil">
+      </a>
+    </div>
+  </header>
+
+  <main class="detail-buku-main">
+    <article class="detail-buku" id="detail-buku" hidden>
+      <div class="detail-buku-kiri">
+        <img class="detail-buku-sampul" id="detail-buku-sampul" alt="">
+        <div class="detail-buku-aksi">
+          <button class="tombol-detail utama" type="button">Baca Online</button>
+          <a class="tombol-detail" id="detail-buku-reservasi" href="#">Reservasi</a>
+          <button class="tombol-detail" id="detail-buku-simpan" type="button" data-aksi-simpan>Simpan</button>
+        </div>
+      </div>
+      <div class="detail-buku-info">
+        <h1 id="detail-buku-judul"></h1>
+        <p class="detail-buku-meta" id="detail-buku-meta"></p>
+        <div class="detail-buku-tag" id="detail-buku-tag" aria-label="Kategori buku"></div>
+        <section class="detail-buku-sinopsis">
+          <h2>Sinopsis</h2>
+          <p id="detail-buku-sinopsis"></p>
+        </section>
+      </div>
+    </article>
+
+    <section class="detail-buku-kosong" id="detail-buku-kosong" hidden>
+      <h1>Buku tidak ditemukan</h1>
+      <p>Silakan pilih buku dari katalog untuk melihat detailnya.</p>
+      <a href="katalog.html">Kembali ke katalog</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-isi">
+      <div class="footer-kolom lebar">
+        <h4>Tentang Kami</h4>
+        <p>Perpustakaan Kota Madiun menyediakan layanan informasi dan literasi yang memudahkan berbagai kalangan masyarakat untuk membaca, belajar, dan meminjam koleksi buku secara mudah.</p>
+      </div>
+      <div class="footer-kolom">
+        <h4>Hubungi Kami</h4>
+        <p>Kontak: +62 812 3456 7890</p>
+        <p>Email: perpustakaan@madiunkota.go.id</p>
+      </div>
+      <div class="footer-kolom">
+        <h4>Link Terkait</h4>
+        <div class="logo-footer">
+          <a href="https://www.madiunkota.go.id/" target="_blank" rel="noopener" title="Pemerintah Kota Madiun">
+            <img src="image/link1.webp" alt="Pemerintah Kota Madiun">
+          </a>
+          <a href="https://disperpusip.jatimprov.go.id/" target="_blank" rel="noopener" title="Dinas Perpustakaan dan Kearsipan Provinsi Jawa Timur">
+            <img src="image/link2.webp" alt="Dinas Perpustakaan dan Kearsipan Provinsi Jawa Timur">
+          </a>
+          <a href="https://perpusnas.go.id/berita/ikatan-pustakawan-indonesia-didorong-memiliki-peran-dalam-pengembangan-perpustakaan" target="_blank" rel="noopener" title="Perpustakaan Nasional">
+            <img src="image/link3.webp" alt="Perpustakaan Nasional">
+          </a>
+          <a href="https://www.madiunkota.go.id/" target="_blank" rel="noopener" title="Kota Madiun">
+            <img src="image/link4.webp" alt="Kota Madiun">
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">Copyright © 2026 Dinas Perpustakaan dan Kearsipan Kota Madiun</p>
+  </footer>
+</body>
+</html>

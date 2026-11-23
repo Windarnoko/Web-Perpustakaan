@@ -6,6 +6,10 @@
   <title>Koleksi - Perpustakaan Kota Madiun</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="data-buku.js" defer></script>
+  <script src="koleksi-store.js" defer></script>
+  <script src="koleksi-ui.js" defer></script>
+  <script src="koleksi.js" defer></script>
 </head>
 <body class="halaman-koleksi">
   <!-- Header dan navigasi -->
@@ -27,127 +31,34 @@
   </header>
 
   <main class="konten-koleksi">
-    <h1>Koleksi Saya</h1>
+    <div class="judul-koleksi">
+      <h1>Koleksi Saya</h1>
+      <button class="tombol-buat-koleksi" type="button" data-buat-koleksi>+ Buat Koleksi</button>
+    </div>
 
     <!-- Pintasan ke daftar koleksi -->
     <nav class="menu-koleksi" aria-label="Pintasan koleksi">
       <a href="#favorit" class="kotak-menu">
         <span class="ikon-koleksi" aria-hidden="true">♡</span>
-        <span>Favorit</span>
+        <span>Favorit <strong id="jumlah-favorit">0</strong></span>
       </a>
-      <a href="#disimpan" class="kotak-menu">
+      <a href="#koleksi-saya" class="kotak-menu">
         <span class="ikon-koleksi" aria-hidden="true">▣</span>
-        <span>Disimpan</span>
-      </a>
-      <a href="#baca-nanti" class="kotak-menu">
-        <span class="ikon-koleksi" aria-hidden="true">◷</span>
-        <span>Baca Nanti</span>
+        <span>Koleksi Saya <strong id="jumlah-koleksi">0</strong></span>
       </a>
     </nav>
 
-    <!-- ===== BUKU FAVORIT ===== -->
     <section class="koleksi-section" id="favorit">
       <h2>Buku Favorit</h2>
-
-      <div class="baris-buku">
-        <article class="buku">
-          <img src="image/cover1.webp" alt="Sampul The Tokyo Zodiac Murders">
-          <h3>The Tokyo Zodiac Murders</h3>
-          <p>Soji Shimada</p>
-        </article>
-        <article class="buku">
-          <img src="image/cover4.webp" alt="Sampul Kasus Pembunuhan Honjin">
-          <h3>Kasus Pembunuhan Honjin</h3>
-          <p>Seishi Yokomizo</p>
-        </article>
-        <article class="buku">
-          <img src="image/baru1.webp" alt="Sampul Tujuh">
-          <h3>Tujuh</h3>
-          <p>Abdul Rasyid B Damanik</p>
-        </article>
-        <article class="buku">
-          <img src="image/cover3.webp" alt="Sampul Teka-Teki Gambar Aneh">
-          <h3>Teka-Teki Gambar Aneh</h3>
-          <p>Uketsu</p>
-        </article>
-        <article class="buku">
-          <img src="image/cover2.webp" alt="Sampul A Good Girl's Guide to Murder">
-          <h3>A Good Girl's Guide to Murder</h3>
-          <p>Holly Jackson</p>
-        </article>
-      </div>
-
-      <a href="katalog.html" class="lihat-semua">Lihat Semua</a>
+      <div class="baris-buku daftar-buku-koleksi" id="daftar-favorit" aria-live="polite"></div>
+      <p class="pesan-koleksi-kosong" id="pesan-favorit">Belum ada buku favorit. Tekan ikon hati pada buku untuk menambahkannya.</p>
     </section>
 
-    <!-- ===== DISIMPAN ===== -->
-    <section class="koleksi-section" id="disimpan">
-      <h2>Disimpan</h2>
-
-      <div class="baris-buku">
-        <article class="buku">
-          <img src="image/cover5.webp" alt="Sampul Petaka Keluarga Inugami">
-          <h3>Petaka Keluarga Inugami</h3>
-          <p>Seishi Yokomizo</p>
-        </article>
-        <article class="buku">
-          <img src="image/cover6.webp" alt="Sampul Hantu di Rumah Kos">
-          <h3>Hantu di Rumah Kos</h3>
-          <p>Dini W. Tamam &amp; Erby S.</p>
-        </article>
-        <article class="buku">
-          <img src="image/cover2.webp" alt="Sampul A Good Girl's Guide to Murder">
-          <h3>A Good Girl's Guide to Murder</h3>
-          <p>Holly Jackson</p>
-        </article>
-        <article class="buku">
-          <img src="image/baru3.webp" alt="Sampul Kiri Sampai Sini">
-          <h3>Kiri Sampai Sini</h3>
-          <p>Faroq Zamzami</p>
-        </article>
-        <article class="buku">
-          <img src="image/baru2.webp" alt="Sampul Pulang">
-          <h3>Pulang</h3>
-          <p>Tere Liye</p>
-        </article>
-      </div>
-
-      <a href="katalog.html" class="lihat-semua">Lihat Semua</a>
-    </section>
-
-    <!-- ===== BACA NANTI ===== -->
-    <section class="koleksi-section" id="baca-nanti">
-      <h2>Baca Nanti</h2>
-
-      <div class="baris-buku">
-        <article class="buku">
-          <img src="image/baru3.webp" alt="Sampul Kiri Sampai Sini">
-          <h3>Kiri Sampai Sini</h3>
-          <p>Faroq Zamzami</p>
-        </article>
-        <article class="buku">
-          <img src="image/cover1.webp" alt="Sampul The Tokyo Zodiac Murders">
-          <h3>The Tokyo Zodiac Murders</h3>
-          <p>Soji Shimada</p>
-        </article>
-        <article class="buku">
-          <img src="image/cover3.webp" alt="Sampul Teka-Teki Gambar Aneh">
-          <h3>Teka-Teki Gambar Aneh</h3>
-          <p>Uketsu</p>
-        </article>
-        <article class="buku">
-          <img src="image/cover4.webp" alt="Sampul Kasus Pembunuhan Honjin">
-          <h3>Kasus Pembunuhan Honjin</h3>
-          <p>Seishi Yokomizo</p>
-        </article>
-        <article class="buku">
-          <img src="image/baru1.webp" alt="Sampul Tujuh">
-          <h3>Tujuh</h3>
-          <p>Abdul Rasyid B Damanik</p>
-        </article>
-      </div>
-
-      <a href="katalog.html" class="lihat-semua">Lihat Semua</a>
+    <section class="koleksi-section" id="koleksi-saya">
+      <h2>Koleksi Saya</h2>
+      <div id="daftar-koleksi-pribadi"></div>
+      <p class="pesan-koleksi-kosong" id="pesan-koleksi-kosong">Belum ada koleksi buatan sendiri. Buat koleksi untuk mulai mengelompokkan buku.</p>
+      <p class="pesan-koleksi-error" id="pesan-koleksi-error" role="alert" hidden></p>
     </section>
   </main>
 

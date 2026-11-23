@@ -6,7 +6,10 @@
   <title>Katalog Perpustakaan Kota Madiun</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="data-buku.js" defer></script>
+  <script src="koleksi-store.js" defer></script>
   <script src="script.js" defer></script>
+  <script src="koleksi-ui.js" defer></script>
 </head>
 <body class="halaman-katalog">
   <!-- Header dan navigasi -->
@@ -112,119 +115,137 @@
       <p class="katalog-jumlah" aria-live="polite">9 hasil ditemukan</p>
 
       <div class="katalog-grid">
-        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="9" data-judul="The Tokyo Zodiac Murders" data-pengarang="Soji Shimada">
-          <img src="image/cover1.webp" alt="Sampul The Tokyo Zodiac Murders">
-          <h3>The Tokyo Zodiac Murders</h3>
+        <article class="kartu-buku item-katalog" data-id="tokyo-zodiac" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="9" data-judul="The Tokyo Zodiac Murders" data-pengarang="Soji Shimada">
+          <a class="tautan-detail-buku" href="detail-buku.html?id=tokyo-zodiac">
+            <img src="image/cover1.webp" alt="Sampul The Tokyo Zodiac Murders">
+            <h3>The Tokyo Zodiac Murders</h3>
+          </a>
           <p class="penulis">Soji Shimada</p>
           <div class="bawah-kartu">
             <span class="status">Tersedia</span>
             <div>
-              <button class="tombol-bulat" type="button" aria-label="Simpan The Tokyo Zodiac Murders">♡</button>
-              <button class="tombol-bulat oranye" type="button" aria-label="Tambah The Tokyo Zodiac Murders">+</button>
+              <button class="tombol-bulat aksi-favorit" type="button" data-aksi-favorit aria-label="Tambahkan The Tokyo Zodiac Murders ke favorit" aria-pressed="false">♡</button>
+              <button class="tombol-bulat oranye aksi-simpan" type="button" data-aksi-simpan aria-label="Simpan The Tokyo Zodiac Murders ke koleksi">+</button>
             </div>
           </div>
         </article>
 
-        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="8" data-judul="A Good Girl's Guide to Murder" data-pengarang="Holly Jackson">
-          <img src="image/cover2.webp" alt="Sampul A Good Girl's Guide to Murder">
-          <h3>A Good Girl's Guide to Murder</h3>
+        <article class="kartu-buku item-katalog" data-id="good-girl-murder" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="8" data-judul="A Good Girl's Guide to Murder" data-pengarang="Holly Jackson">
+          <a class="tautan-detail-buku" href="detail-buku.html?id=good-girl-murder">
+            <img src="image/cover2.webp" alt="Sampul A Good Girl's Guide to Murder">
+            <h3>A Good Girl's Guide to Murder</h3>
+          </a>
           <p class="penulis">Holly Jackson</p>
           <div class="bawah-kartu">
             <span class="status">Tersedia</span>
             <div>
-              <button class="tombol-bulat" type="button" aria-label="Simpan A Good Girl's Guide to Murder">♡</button>
-              <button class="tombol-bulat oranye" type="button" aria-label="Tambah A Good Girl's Guide to Murder">+</button>
+              <button class="tombol-bulat aksi-favorit" type="button" data-aksi-favorit aria-label="Tambahkan A Good Girl's Guide to Murder ke favorit" aria-pressed="false">♡</button>
+              <button class="tombol-bulat oranye aksi-simpan" type="button" data-aksi-simpan aria-label="Simpan A Good Girl's Guide to Murder ke koleksi">+</button>
             </div>
           </div>
         </article>
 
-        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="7" data-judul="Teka-Teki Gambar Aneh" data-pengarang="Uketsu">
-          <img src="image/cover3.webp" alt="Sampul Teka-Teki Gambar Aneh">
-          <h3>Teka-Teki Gambar Aneh</h3>
+        <article class="kartu-buku item-katalog" data-id="teka-teki-gambar-aneh" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="7" data-judul="Teka-Teki Gambar Aneh" data-pengarang="Uketsu">
+          <a class="tautan-detail-buku" href="detail-buku.html?id=teka-teki-gambar-aneh">
+            <img src="image/cover3.webp" alt="Sampul Teka-Teki Gambar Aneh">
+            <h3>Teka-Teki Gambar Aneh</h3>
+          </a>
           <p class="penulis">Uketsu</p>
           <div class="bawah-kartu">
             <span class="status">Tersedia</span>
             <div>
-              <button class="tombol-bulat" type="button" aria-label="Simpan Teka-Teki Gambar Aneh">♡</button>
-              <button class="tombol-bulat oranye" type="button" aria-label="Tambah Teka-Teki Gambar Aneh">+</button>
+              <button class="tombol-bulat aksi-favorit" type="button" data-aksi-favorit aria-label="Tambahkan Teka-Teki Gambar Aneh ke favorit" aria-pressed="false">♡</button>
+              <button class="tombol-bulat oranye aksi-simpan" type="button" data-aksi-simpan aria-label="Simpan Teka-Teki Gambar Aneh ke koleksi">+</button>
             </div>
           </div>
         </article>
 
-        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="6" data-judul="Kasus Pembunuhan Honjin" data-pengarang="Seishi Yokomizo">
-          <img src="image/cover4.webp" alt="Sampul Kasus Pembunuhan Honjin">
-          <h3>Kasus Pembunuhan Honjin</h3>
+        <article class="kartu-buku item-katalog" data-id="kasus-honjin" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="6" data-judul="Kasus Pembunuhan Honjin" data-pengarang="Seishi Yokomizo">
+          <a class="tautan-detail-buku" href="detail-buku.html?id=kasus-honjin">
+            <img src="image/cover4.webp" alt="Sampul Kasus Pembunuhan Honjin">
+            <h3>Kasus Pembunuhan Honjin</h3>
+          </a>
           <p class="penulis">Seishi Yokomizo</p>
           <div class="bawah-kartu">
             <span class="status">Tersedia</span>
             <div>
-              <button class="tombol-bulat" type="button" aria-label="Simpan Kasus Pembunuhan Honjin">♡</button>
-              <button class="tombol-bulat oranye" type="button" aria-label="Tambah Kasus Pembunuhan Honjin">+</button>
+              <button class="tombol-bulat aksi-favorit" type="button" data-aksi-favorit aria-label="Tambahkan Kasus Pembunuhan Honjin ke favorit" aria-pressed="false">♡</button>
+              <button class="tombol-bulat oranye aksi-simpan" type="button" data-aksi-simpan aria-label="Simpan Kasus Pembunuhan Honjin ke koleksi">+</button>
             </div>
           </div>
         </article>
 
-        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="5" data-judul="Petaka Keluarga Inugami" data-pengarang="Seishi Yokomizo">
-          <img src="image/cover5.webp" alt="Sampul Petaka Keluarga Inugami">
-          <h3>Petaka Keluarga Inugami</h3>
+        <article class="kartu-buku item-katalog" data-id="petaka-inugami" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="5" data-judul="Petaka Keluarga Inugami" data-pengarang="Seishi Yokomizo">
+          <a class="tautan-detail-buku" href="detail-buku.html?id=petaka-inugami">
+            <img src="image/cover5.webp" alt="Sampul Petaka Keluarga Inugami">
+            <h3>Petaka Keluarga Inugami</h3>
+          </a>
           <p class="penulis">Seishi Yokomizo</p>
           <div class="bawah-kartu">
             <span class="status">Tersedia</span>
             <div>
-              <button class="tombol-bulat" type="button" aria-label="Simpan Petaka Keluarga Inugami">♡</button>
-              <button class="tombol-bulat oranye" type="button" aria-label="Tambah Petaka Keluarga Inugami">+</button>
+              <button class="tombol-bulat aksi-favorit" type="button" data-aksi-favorit aria-label="Tambahkan Petaka Keluarga Inugami ke favorit" aria-pressed="false">♡</button>
+              <button class="tombol-bulat oranye aksi-simpan" type="button" data-aksi-simpan aria-label="Simpan Petaka Keluarga Inugami ke koleksi">+</button>
             </div>
           </div>
         </article>
 
-        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="4" data-judul="Hantu di Rumah Kos" data-pengarang="Dini W. Tamam &amp; Erby S.">
-          <img src="image/cover6.webp" alt="Sampul Hantu di Rumah Kos">
-          <h3>Hantu di Rumah Kos</h3>
+        <article class="kartu-buku item-katalog" data-id="hantu-rumah-kos" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="4" data-judul="Hantu di Rumah Kos" data-pengarang="Dini W. Tamam &amp; Erby S.">
+          <a class="tautan-detail-buku" href="detail-buku.html?id=hantu-rumah-kos">
+            <img src="image/cover6.webp" alt="Sampul Hantu di Rumah Kos">
+            <h3>Hantu di Rumah Kos</h3>
+          </a>
           <p class="penulis">Dini W. Tamam &amp; Erby S.</p>
           <div class="bawah-kartu">
             <span class="status">Tersedia</span>
             <div>
-              <button class="tombol-bulat" type="button" aria-label="Simpan Hantu di Rumah Kos">♡</button>
-              <button class="tombol-bulat oranye" type="button" aria-label="Tambah Hantu di Rumah Kos">+</button>
+              <button class="tombol-bulat aksi-favorit" type="button" data-aksi-favorit aria-label="Tambahkan Hantu di Rumah Kos ke favorit" aria-pressed="false">♡</button>
+              <button class="tombol-bulat oranye aksi-simpan" type="button" data-aksi-simpan aria-label="Simpan Hantu di Rumah Kos ke koleksi">+</button>
             </div>
           </div>
         </article>
 
-        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="fiksi" data-tahun="tidak-dicantumkan" data-populer="3" data-judul="Tujuh" data-pengarang="Abdul Rasyid B Damanik">
-          <img src="image/baru1.webp" alt="Sampul Tujuh">
-          <h3>Tujuh</h3>
+        <article class="kartu-buku item-katalog" data-id="tujuh" data-tipe="buku" data-kategori="fiksi" data-tahun="tidak-dicantumkan" data-populer="3" data-judul="Tujuh" data-pengarang="Abdul Rasyid B Damanik">
+          <a class="tautan-detail-buku" href="detail-buku.html?id=tujuh">
+            <img src="image/baru1.webp" alt="Sampul Tujuh">
+            <h3>Tujuh</h3>
+          </a>
           <p class="penulis">Abdul Rasyid B Damanik</p>
           <div class="bawah-kartu">
             <span class="status">Tersedia</span>
             <div>
-              <button class="tombol-bulat" type="button" aria-label="Simpan Tujuh">♡</button>
-              <button class="tombol-bulat oranye" type="button" aria-label="Tambah Tujuh">+</button>
+              <button class="tombol-bulat aksi-favorit" type="button" data-aksi-favorit aria-label="Tambahkan Tujuh ke favorit" aria-pressed="false">♡</button>
+              <button class="tombol-bulat oranye aksi-simpan" type="button" data-aksi-simpan aria-label="Simpan Tujuh ke koleksi">+</button>
             </div>
           </div>
         </article>
 
-        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="fiksi" data-tahun="tidak-dicantumkan" data-populer="2" data-judul="Kiri Sampai Sini" data-pengarang="Faroq Zamzami">
-          <img src="image/baru3.webp" alt="Sampul Kiri Sampai Sini">
-          <h3>Kiri Sampai Sini</h3>
+        <article class="kartu-buku item-katalog" data-id="kiri-sampai-sini" data-tipe="buku" data-kategori="fiksi" data-tahun="tidak-dicantumkan" data-populer="2" data-judul="Kiri Sampai Sini" data-pengarang="Faroq Zamzami">
+          <a class="tautan-detail-buku" href="detail-buku.html?id=kiri-sampai-sini">
+            <img src="image/baru3.webp" alt="Sampul Kiri Sampai Sini">
+            <h3>Kiri Sampai Sini</h3>
+          </a>
           <p class="penulis">Faroq Zamzami</p>
           <div class="bawah-kartu">
             <span class="status">Tersedia</span>
             <div>
-              <button class="tombol-bulat" type="button" aria-label="Simpan Kiri Sampai Sini">♡</button>
-              <button class="tombol-bulat oranye" type="button" aria-label="Tambah Kiri Sampai Sini">+</button>
+              <button class="tombol-bulat aksi-favorit" type="button" data-aksi-favorit aria-label="Tambahkan Kiri Sampai Sini ke favorit" aria-pressed="false">♡</button>
+              <button class="tombol-bulat oranye aksi-simpan" type="button" data-aksi-simpan aria-label="Simpan Kiri Sampai Sini ke koleksi">+</button>
             </div>
           </div>
         </article>
 
-        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="fiksi" data-tahun="tidak-dicantumkan" data-populer="1" data-judul="Pulang" data-pengarang="Tere Liye">
-          <img src="image/baru2.webp" alt="Sampul Pulang">
-          <h3>Pulang</h3>
+        <article class="kartu-buku item-katalog" data-id="pulang" data-tipe="buku" data-kategori="fiksi" data-tahun="tidak-dicantumkan" data-populer="1" data-judul="Pulang" data-pengarang="Tere Liye">
+          <a class="tautan-detail-buku" href="detail-buku.html?id=pulang">
+            <img src="image/baru2.webp" alt="Sampul Pulang">
+            <h3>Pulang</h3>
+          </a>
           <p class="penulis">Tere Liye</p>
           <div class="bawah-kartu">
             <span class="status">Tersedia</span>
             <div>
-              <button class="tombol-bulat" type="button" aria-label="Simpan Pulang">♡</button>
-              <button class="tombol-bulat oranye" type="button" aria-label="Tambah Pulang">+</button>
+              <button class="tombol-bulat aksi-favorit" type="button" data-aksi-favorit aria-label="Tambahkan Pulang ke favorit" aria-pressed="false">♡</button>
+              <button class="tombol-bulat oranye aksi-simpan" type="button" data-aksi-simpan aria-label="Simpan Pulang ke koleksi">+</button>
             </div>
           </div>
         </article>

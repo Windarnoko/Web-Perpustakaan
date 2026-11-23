@@ -6,6 +6,10 @@
   <title>Perpustakaan Kota Madiun</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="data-buku.js" defer></script>
+  <script src="koleksi-store.js" defer></script>
+  <script src="koleksi-ui.js" defer></script>
+  <script src="beranda.js" defer></script>
 </head>
 <body>
 
@@ -61,18 +65,18 @@
   <section class="akses">
     <h2 class="judul-kiri">Akses Cepat</h2>
     <div class="akses-kartu">
-      <div class="kartu-kecil">
+      <a class="kartu-kecil" href="katalog.html">
         <img src="image/01-buku.webp" alt="Peminjaman Buku" class="ikon">
         <p>Peminjaman Buku</p>
-      </div>
+      </a>
       <a class="kartu-kecil" href="katalog.html?jenis=ebook#daftar-katalog">
         <img src="image/34-ebook.webp" alt="" class="ikon">
         <p>E-book Digital</p>
       </a>
-      <div class="kartu-kecil">
-        <img src="image/09-jam.webp" alt="Reservasi Online" class="ikon">
+      <a class="kartu-kecil" href="perpanjangan.html">
+        <img src="image/09-jam.webp" alt="" class="ikon">
         <p>Perpanjangan Peminjaman</p>
-      </div>
+      </a>
     </div>
   </section>
 
@@ -125,41 +129,43 @@
   </div>
 
   <section class="populer-buku">
-    <div class="baris-buku">
-      <div class="sampul-populer">
-        <img src="image/cover1.webp" alt="Cover buku 1">
-        <span class="buka-buku">Buka</span>
+    <div class="carousel-populer">
+      <div class="jendela-populer">
+        <div class="jalur-populer" id="jalur-populer">
+          <div class="halaman-populer">
+            <a class="sampul-populer tautan-detail-buku" href="detail-buku.html?id=tokyo-zodiac" aria-label="Buka detail The Tokyo Zodiac Murders">
+              <img src="image/cover1.webp" alt="Sampul The Tokyo Zodiac Murders">
+              <span class="buka-buku">Buka</span>
+            </a>
+            <a class="sampul-populer tautan-detail-buku" href="detail-buku.html?id=good-girl-murder" aria-label="Buka detail A Good Girl's Guide to Murder">
+              <img src="image/cover2.webp" alt="Sampul A Good Girl's Guide to Murder">
+              <span class="buka-buku">Buka</span>
+            </a>
+            <a class="sampul-populer tautan-detail-buku" href="detail-buku.html?id=teka-teki-gambar-aneh" aria-label="Buka detail Teka-Teki Gambar Aneh">
+              <img src="image/cover3.webp" alt="Sampul Teka-Teki Gambar Aneh">
+              <span class="buka-buku">Buka</span>
+            </a>
+            <a class="sampul-populer tautan-detail-buku" href="detail-buku.html?id=kasus-honjin" aria-label="Buka detail Kasus Pembunuhan Honjin">
+              <img src="image/cover4.webp" alt="Sampul Kasus Pembunuhan Honjin">
+              <span class="buka-buku">Buka</span>
+            </a>
+            <a class="sampul-populer tautan-detail-buku" href="detail-buku.html?id=petaka-inugami" aria-label="Buka detail Petaka Keluarga Inugami">
+              <img src="image/cover5.webp" alt="Sampul Petaka Keluarga Inugami">
+              <span class="buka-buku">Buka</span>
+            </a>
+            <a class="sampul-populer tautan-detail-buku" href="detail-buku.html?id=hantu-rumah-kos" aria-label="Buka detail Hantu di Rumah Kos">
+              <img src="image/cover6.webp" alt="Sampul Hantu di Rumah Kos">
+              <span class="buka-buku">Buka</span>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="sampul-populer">
-        <img src="image/cover2.webp" alt="Cover buku 2">
-        <span class="buka-buku">Buka</span>
-      </div>
-      <div class="sampul-populer">
-        <img src="image/cover3.webp" alt="Cover buku 3">
-        <span class="buka-buku">Buka</span>
-      </div>
-      <div class="sampul-populer">
-        <img src="image/cover4.webp" alt="Cover buku 4">
-        <span class="buka-buku">Buka</span>
-      </div>
-      <div class="sampul-populer">
-        <img src="image/cover5.webp" alt="Cover buku 5">
-        <span class="buka-buku">Buka</span>
-      </div>
-      <div class="sampul-populer">
-        <img src="image/cover6.webp" alt="Cover buku 6">
-        <span class="buka-buku">Buka</span>
-      </div>
-      <span class="panah">&gt;</span>
+      <button class="panah-populer" id="panah-populer" type="button" aria-label="Halaman buku populer berikutnya">&gt;</button>
     </div>
 
-    <div class="titik">
-      <span class="aktif"></span>
-      <span></span>
-      <span></span>
-    </div>
+    <div class="indikator-populer" id="indikator-populer" role="group" aria-label="Halaman buku populer"></div>
 
-    <a href="#" class="lihat-semua">Lihat Semua</a>
+    <a href="katalog.html" class="lihat-semua">Lihat Semua</a>
   </section>
 
   <!-- ruang fasilitas -->
@@ -195,44 +201,50 @@
   </div>
 
   <section class="buku-baru">
-    <div class="kartu-buku">
+    <div class="kartu-buku" data-book-id="tujuh">
       <span class="badge-baru">Baru</span>
-      <img src="image/baru1.webp" alt="Tujuh">
-      <h4>Tujuh</h4>
-      <p class="penulis">Penulis Buku Tujuh</p>
+      <a class="tautan-detail-buku" href="detail-buku.html?id=tujuh">
+        <img src="image/baru1.webp" alt="Sampul Tujuh">
+        <h4>Tujuh</h4>
+      </a>
+      <p class="penulis">Abdul Rasyid B Damanik</p>
       <div class="bawah-kartu">
         <span class="status">Tersedia</span>
         <div>
-          <button class="tombol-bulat">♡</button>
-          <button class="tombol-bulat oranye">+</button>
+          <button class="tombol-bulat aksi-favorit" type="button" data-aksi-favorit aria-label="Tambahkan Tujuh ke favorit" aria-pressed="false">♡</button>
+          <button class="tombol-bulat oranye aksi-simpan" type="button" data-aksi-simpan aria-label="Simpan Tujuh ke koleksi">+</button>
         </div>
       </div>
     </div>
 
-    <div class="kartu-buku">
+    <div class="kartu-buku" data-book-id="kiri-sampai-sini">
       <span class="badge-baru">Baru</span>
-      <img src="image/baru2.webp" alt="Kiri Sampai Sini">
-      <h4>Kiri Sampai Sini</h4>
-      <p class="penulis">Penulis Kiri Sampai Sini</p>
+      <a class="tautan-detail-buku" href="detail-buku.html?id=kiri-sampai-sini">
+        <img src="image/baru3.webp" alt="Sampul Kiri Sampai Sini">
+        <h4>Kiri Sampai Sini</h4>
+      </a>
+      <p class="penulis">Faroq Zamzami</p>
       <div class="bawah-kartu">
         <span class="status">Tersedia</span>
         <div>
-          <button class="tombol-bulat">♡</button>
-          <button class="tombol-bulat oranye">+</button>
+          <button class="tombol-bulat aksi-favorit" type="button" data-aksi-favorit aria-label="Tambahkan Kiri Sampai Sini ke favorit" aria-pressed="false">♡</button>
+          <button class="tombol-bulat oranye aksi-simpan" type="button" data-aksi-simpan aria-label="Simpan Kiri Sampai Sini ke koleksi">+</button>
         </div>
       </div>
     </div>
 
-    <div class="kartu-buku">
+    <div class="kartu-buku" data-book-id="pulang">
       <span class="badge-baru">Baru</span>
-      <img src="image/baru3.webp" alt="Pulang">
-      <h4>Pulang</h4>
+      <a class="tautan-detail-buku" href="detail-buku.html?id=pulang">
+        <img src="image/baru2.webp" alt="Sampul Pulang">
+        <h4>Pulang</h4>
+      </a>
       <p class="penulis">Tere Liye</p>
       <div class="bawah-kartu">
         <span class="status">Tersedia</span>
         <div>
-          <button class="tombol-bulat">♡</button>
-          <button class="tombol-bulat oranye">+</button>
+          <button class="tombol-bulat aksi-favorit" type="button" data-aksi-favorit aria-label="Tambahkan Pulang ke favorit" aria-pressed="false">♡</button>
+          <button class="tombol-bulat oranye aksi-simpan" type="button" data-aksi-simpan aria-label="Simpan Pulang ke koleksi">+</button>
         </div>
       </div>
     </div>
