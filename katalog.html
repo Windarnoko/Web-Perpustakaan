@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Perpustakaan Kota Madiun</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="katalog.js" defer></script>
+</head>
+<body class="halaman-katalog">
+  <!-- Header dan navigasi -->
+  <header class="header">
+    <div class="header-isi">
+      <a href="index.html" aria-label="Beranda Perpustakaan Kota Madiun">
+        <img src="image/logo.webp" alt="Logo Kota Madiun" class="logo">
+      </a>
+      <nav class="menu" aria-label="Navigasi utama">
+        <a href="index.html">Beranda</a>
+        <a href="#daftar-katalog">Koleksi</a>
+        <a href="katalog.html" aria-current="page">Katalog</a>
+        <a href="index.html">Layanan</a>
+      </nav>
+      <a href="#" class="akun" aria-label="Profil pengguna" title="Profil pengguna">
+        <img src="image/profil.webp" alt="Foto profil" class="foto-profil">
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Pengantar katalog -->
+    <section class="katalog-hero">
+      <div class="katalog-pengantar">
+        <p class="label-kecil">KATALOG</p>
+        <h1>Katalog Perpustakaan</h1>
+        <p class="katalog-deskripsi">Cari buku cetak dan e-book, lalu reservasi atau baca langsung secara online.</p>
+
+        <div class="katalog-statistik">
+          <div>
+            <h2>60.000+</h2>
+            <p>koleksi buku di rak</p>
+          </div>
+          <div>
+            <h2>9.000+</h2>
+            <p>koleksi e-book</p>
+          </div>
+          <div>
+            <h2>500.000+</h2>
+            <p>pengunjung setiap tahun</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="katalog-visual" aria-hidden="true">
+        <img class="sampul-katalog sampul-katalog-kiri" src="image/cover5.webp" alt="">
+        <img class="sampul-katalog sampul-katalog-tengah" src="image/cover3.webp" alt="">
+        <img class="sampul-katalog sampul-katalog-kanan" src="image/cover1.webp" alt="">
+      </div>
+    </section>
+
+    <!-- Pencarian katalog -->
+    <section class="katalog-pencarian" aria-labelledby="judul-pencarian-katalog">
+      <h2 id="judul-pencarian-katalog">Pencarian Buku</h2>
+      <form class="katalog-form-cari" role="search">
+        <label class="sr-only" for="katalog-query">Cari judul atau pengarang</label>
+        <input id="katalog-query" type="search" placeholder="Cari judul buku atau pengarang">
+        <button type="submit">Cari</button>
+      </form>
+
+      <div class="katalog-rekomendasi">
+        <span>Pencarian rekomendasi</span>
+        <button type="button" data-kategori="misteri">Misteri</button>
+        <button type="button" data-kategori="fiksi">Fiksi</button>
+        <button type="button" data-query="Uketsu">Uketsu</button>
+      </div>
+    </section>
+
+    <!-- Daftar dan filter buku -->
+    <section class="katalog-daftar" id="daftar-katalog" aria-label="Daftar koleksi buku">
+      <div class="katalog-tabs" role="group" aria-label="Jenis koleksi">
+        <button type="button" class="aktif" data-tipe="semua" aria-pressed="true">Semua</button>
+        <button type="button" data-tipe="buku" aria-pressed="false">Buku</button>
+        <button type="button" data-tipe="ebook" aria-pressed="false">E-book</button>
+      </div>
+
+      <div class="katalog-filter">
+        <label>
+          <span>Kategori</span>
+          <select id="filter-kategori">
+            <option value="semua">Semua Kategori</option>
+            <option value="misteri">Misteri</option>
+            <option value="fiksi">Fiksi</option>
+          </select>
+        </label>
+        <label>
+          <span>Tahun Terbit</span>
+          <select id="filter-tahun">
+            <option value="semua">Semua Tahun</option>
+            <option value="tidak-dicantumkan">Tahun tidak dicantumkan</option>
+          </select>
+        </label>
+        <label>
+          <span>Urutkan</span>
+          <select id="urutkan-katalog">
+            <option value="populer">Terpopuler</option>
+            <option value="judul-az">Judul A-Z</option>
+            <option value="judul-za">Judul Z-A</option>
+          </select>
+        </label>
+      </div>
+
+      <p class="katalog-jumlah" aria-live="polite">9 hasil ditemukan</p>
+
+      <div class="katalog-grid">
+        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="9" data-judul="The Tokyo Zodiac Murders" data-pengarang="Soji Shimada">
+          <img src="image/cover1.webp" alt="Sampul The Tokyo Zodiac Murders">
+          <h3>The Tokyo Zodiac Murders</h3>
+          <p class="penulis">Soji Shimada</p>
+          <div class="bawah-kartu">
+            <span class="status">Tersedia</span>
+            <div>
+              <button class="tombol-bulat" type="button" aria-label="Simpan The Tokyo Zodiac Murders">♡</button>
+              <button class="tombol-bulat oranye" type="button" aria-label="Tambah The Tokyo Zodiac Murders">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="8" data-judul="A Good Girl's Guide to Murder" data-pengarang="Holly Jackson">
+          <img src="image/cover2.webp" alt="Sampul A Good Girl's Guide to Murder">
+          <h3>A Good Girl's Guide to Murder</h3>
+          <p class="penulis">Holly Jackson</p>
+          <div class="bawah-kartu">
+            <span class="status">Tersedia</span>
+            <div>
+              <button class="tombol-bulat" type="button" aria-label="Simpan A Good Girl's Guide to Murder">♡</button>
+              <button class="tombol-bulat oranye" type="button" aria-label="Tambah A Good Girl's Guide to Murder">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="7" data-judul="Teka-Teki Gambar Aneh" data-pengarang="Uketsu">
+          <img src="image/cover3.webp" alt="Sampul Teka-Teki Gambar Aneh">
+          <h3>Teka-Teki Gambar Aneh</h3>
+          <p class="penulis">Uketsu</p>
+          <div class="bawah-kartu">
+            <span class="status">Tersedia</span>
+            <div>
+              <button class="tombol-bulat" type="button" aria-label="Simpan Teka-Teki Gambar Aneh">♡</button>
+              <button class="tombol-bulat oranye" type="button" aria-label="Tambah Teka-Teki Gambar Aneh">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="6" data-judul="Kasus Pembunuhan Honjin" data-pengarang="Seishi Yokomizo">
+          <img src="image/cover4.webp" alt="Sampul Kasus Pembunuhan Honjin">
+          <h3>Kasus Pembunuhan Honjin</h3>
+          <p class="penulis">Seishi Yokomizo</p>
+          <div class="bawah-kartu">
+            <span class="status">Tersedia</span>
+            <div>
+              <button class="tombol-bulat" type="button" aria-label="Simpan Kasus Pembunuhan Honjin">♡</button>
+              <button class="tombol-bulat oranye" type="button" aria-label="Tambah Kasus Pembunuhan Honjin">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="5" data-judul="Petaka Keluarga Inugami" data-pengarang="Seishi Yokomizo">
+          <img src="image/cover5.webp" alt="Sampul Petaka Keluarga Inugami">
+          <h3>Petaka Keluarga Inugami</h3>
+          <p class="penulis">Seishi Yokomizo</p>
+          <div class="bawah-kartu">
+            <span class="status">Tersedia</span>
+            <div>
+              <button class="tombol-bulat" type="button" aria-label="Simpan Petaka Keluarga Inugami">♡</button>
+              <button class="tombol-bulat oranye" type="button" aria-label="Tambah Petaka Keluarga Inugami">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="4" data-judul="Hantu di Rumah Kos" data-pengarang="Dini W. Tamam &amp; Erby S.">
+          <img src="image/cover6.webp" alt="Sampul Hantu di Rumah Kos">
+          <h3>Hantu di Rumah Kos</h3>
+          <p class="penulis">Dini W. Tamam &amp; Erby S.</p>
+          <div class="bawah-kartu">
+            <span class="status">Tersedia</span>
+            <div>
+              <button class="tombol-bulat" type="button" aria-label="Simpan Hantu di Rumah Kos">♡</button>
+              <button class="tombol-bulat oranye" type="button" aria-label="Tambah Hantu di Rumah Kos">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="fiksi" data-tahun="tidak-dicantumkan" data-populer="3" data-judul="Tujuh" data-pengarang="Abdul Rasyid B Damanik">
+          <img src="image/baru1.webp" alt="Sampul Tujuh">
+          <h3>Tujuh</h3>
+          <p class="penulis">Abdul Rasyid B Damanik</p>
+          <div class="bawah-kartu">
+            <span class="status">Tersedia</span>
+            <div>
+              <button class="tombol-bulat" type="button" aria-label="Simpan Tujuh">♡</button>
+              <button class="tombol-bulat oranye" type="button" aria-label="Tambah Tujuh">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="fiksi" data-tahun="tidak-dicantumkan" data-populer="2" data-judul="Kiri Sampai Sini" data-pengarang="Faroq Zamzami">
+          <img src="image/baru3.webp" alt="Sampul Kiri Sampai Sini">
+          <h3>Kiri Sampai Sini</h3>
+          <p class="penulis">Faroq Zamzami</p>
+          <div class="bawah-kartu">
+            <span class="status">Tersedia</span>
+            <div>
+              <button class="tombol-bulat" type="button" aria-label="Simpan Kiri Sampai Sini">♡</button>
+              <button class="tombol-bulat oranye" type="button" aria-label="Tambah Kiri Sampai Sini">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="kartu-buku item-katalog" data-tipe="buku" data-kategori="fiksi" data-tahun="tidak-dicantumkan" data-populer="1" data-judul="Pulang" data-pengarang="Tere Liye">
+          <img src="image/baru2.webp" alt="Sampul Pulang">
+          <h3>Pulang</h3>
+          <p class="penulis">Tere Liye</p>
+          <div class="bawah-kartu">
+            <span class="status">Tersedia</span>
+            <div>
+              <button class="tombol-bulat" type="button" aria-label="Simpan Pulang">♡</button>
+              <button class="tombol-bulat oranye" type="button" aria-label="Tambah Pulang">+</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="katalog-kosong" hidden>Tidak ada koleksi yang sesuai dengan filter atau pencarian.</p>
+
+      <nav class="katalog-paginasi" aria-label="Navigasi halaman katalog">
+        <button type="button" disabled>Sebelumnya</button>
+        <span>1 / 1</span>
+        <button type="button" disabled>Berikutnya</button>
+      </nav>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-isi">
+      <div class="footer-kolom lebar">
+        <h4>Tentang Kami</h4>
+        <p>Perpustakaan Kota Madiun menyediakan layanan informasi dan literasi yang memudahkan berbagai kalangan masyarakat untuk membaca, belajar, dan meminjam koleksi buku secara mudah.</p>
+      </div>
+      <div class="footer-kolom">
+        <h4>Hubungi Kami</h4>
+        <p>Kontak: +62 812 3456 7890</p>
+        <p>Email: perpustakaan@madiunkota.go.id</p>
+      </div>
+      <div class="footer-kolom">
+        <h4>Link Terkait</h4>
+        <div class="logo-footer">
+          <a href="https://www.madiunkota.go.id/" target="_blank" rel="noopener" title="Pemerintah Kota Madiun">
+            <img src="image/link1.webp" alt="Pemerintah Kota Madiun">
+          </a>
+          <a href="https://disperpusip.jatimprov.go.id/" target="_blank" rel="noopener" title="Dinas Perpustakaan dan Kearsipan Provinsi Jawa Timur">
+            <img src="image/link2.webp" alt="Dinas Perpustakaan dan Kearsipan Provinsi Jawa Timur">
+          </a>
+          <a href="https://perpusnas.go.id/berita/ikatan-pustakawan-indonesia-didorong-memiliki-peran-dalam-pengembangan-perpustakaan" target="_blank" rel="noopener" title="Perpustakaan Nasional">
+            <img src="image/link3.webp" alt="Perpustakaan Nasional">
+          </a>
+          <a href="https://www.madiunkota.go.id/" target="_blank" rel="noopener" title="Kota Madiun">
+            <img src="image/link4.webp" alt="Kota Madiun">
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">Copyright © 2026 Dinas Perpustakaan dan Kearsipan Kota Madiun</p>
+  </footer>
+
+</body>
+</html>
