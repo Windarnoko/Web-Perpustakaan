@@ -1,4 +1,4 @@
-/*  awal  */
+/* Reset dan gaya global */
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +25,7 @@ img {
   color: #2b5797;
 }
 
-/*  HEADER  */
+/* Header dan navigasi */
 .header {
   border-bottom: 1px solid #dddddd;
   padding: 15px 0;
@@ -90,6 +90,7 @@ img {
   outline: none;
 }
 
+/* Header responsif */
 @media (max-width: 900px) {
   .header-isi {
     flex-wrap: wrap;
@@ -120,7 +121,7 @@ img {
   }
 }
 
-/* hero */
+/* Hero dan pencarian */
 .hero {
   width: 90%;
   max-width: 1200px;
@@ -152,6 +153,7 @@ img {
   margin-bottom: 20px;
 }
 
+/* Form pencarian */
 .kotak-cari {
   display: flex;
   gap: 10px;
@@ -191,6 +193,7 @@ img {
   outline-offset: 2px;
 }
 
+/* Tautan pencarian populer */
 .populer {
   font-size: 11px;
   display: flex;
@@ -225,7 +228,7 @@ img {
   margin-top: 8px;
 }
 
-/* cepat akses */
+/* Akses cepat */
 .akses {
   width: 90%;
   max-width: 1200px;
@@ -281,7 +284,7 @@ img {
   font-size: 13px;
 }
 
-/*  JADWAL  */
+/* Jadwal dan statistik */
 .jadwal {
   width: 90%;
   max-width: 1200px;
@@ -368,7 +371,7 @@ img {
   margin-top: 4px;
 }
 
-/*judul section) biru*/
+/* Pita judul section */
 .pita {
   background-color: #003366;
   color: white;
@@ -385,7 +388,7 @@ img {
   font-size: 22px;
 }
 
-/*  BUKU TERPOPULER  */
+/* Buku terpopuler */
 .populer-buku {
   width: 90%;
   max-width: 1200px;
@@ -494,7 +497,7 @@ img {
   padding-right: 0;
 }
 
-/*  FASILITAS  */
+/* Fasilitas */
 .fasilitas {
   width: 90%;
   max-width: 1200px;
@@ -532,7 +535,7 @@ img {
   line-height: 1.5;
 }
 
-/*  BUKU BARU  */
+/* Buku terbaru */
 .buku-baru {
   width: 90%;
   max-width: 1200px;
@@ -615,7 +618,7 @@ img {
   height: 28px;
 }
 
-/*  FOOTER  */
+/* Footer */
 .footer {
   background-color: #003366;
   color: white;
@@ -667,6 +670,7 @@ img {
   font-size: 11px;
 }
 
+/* Tata letak tablet */
 @media (max-width: 900px) {
   .hero-kiri h1 {
     font-size: 34px;
@@ -725,6 +729,7 @@ img {
   }
 }
 
+/* Geser carousel buku */
 @media (max-width: 1100px) {
   .baris-buku {
     justify-content: flex-start;
@@ -737,7 +742,9 @@ img {
   }
 }
 
+/* Tata letak mobile */
 @media (max-width: 600px) {
+  /* Hero */
   .hero {
     flex-direction: column;
     align-items: stretch;
@@ -769,6 +776,7 @@ img {
     aspect-ratio: 4 / 3;
   }
 
+  /* Akses cepat */
   .akses-kartu {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -791,6 +799,7 @@ img {
     line-height: 1.4;
   }
 
+  /* Jadwal */
   .jadwal-kartu {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -825,6 +834,7 @@ img {
     line-height: 1.4;
   }
 
+  /* Pita judul section */
   .pita {
     padding: 22px 5%;
   }
@@ -834,6 +844,7 @@ img {
     line-height: 1.4;
   }
 
+  /* Buku terpopuler */
   .baris-buku {
     justify-content: flex-start;
     overflow-x: auto;
@@ -852,6 +863,7 @@ img {
     display: none;
   }
 
+  /* Fasilitas */
   .fasilitas {
     flex-direction: column;
     gap: 16px;
@@ -867,6 +879,7 @@ img {
     aspect-ratio: 16 / 10;
   }
 
+  /* Buku terbaru */
   .buku-baru {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -904,6 +917,7 @@ img {
     height: 24px;
   }
 
+  /* Footer */
   .footer-isi {
     flex-direction: column;
     flex-wrap: nowrap;
