@@ -33,7 +33,7 @@ img {
 
 .header-isi {
   width: 90%;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -123,7 +123,7 @@ img {
 /* hero */
 .hero {
   width: 90%;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 30px auto;
   display: flex;
   justify-content: space-between;
@@ -215,7 +215,7 @@ img {
 /* cepat akses */
 .akses {
   width: 90%;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto 30px;
 }
 
@@ -257,7 +257,7 @@ img {
 /*  JADWAL  */
 .jadwal {
   width: 90%;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto 50px;
 }
 
@@ -269,7 +269,6 @@ img {
 }
 
 .kotak-jadwal {
-  position: relative;
   width: 230px;
   border: 1px solid #cccccc;
   border-radius: 10px;
@@ -292,14 +291,27 @@ img {
   border-color: #003366;
 }
 
+.judul-jadwal-utama {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.judul-jadwal-utama .judul-kiri {
+  flex: 1 1 auto;
+  margin-bottom: 0;
+}
+
+.judul-jadwal-utama .badge-buka {
+  flex: 0 0 auto;
+}
+
 .badge-buka {
-  position: absolute;
-  top: -24px;
-  left: 20px;
   background-color: #dde6f3;
   color: #003366;
-  font-size: 11px;
-  padding: 3px 10px;
+  font-size: 10px;
+  padding: 3px 8px;
   border-radius: 10px;
 }
 
@@ -349,7 +361,7 @@ img {
 /*  BUKU TERPOPULER  */
 .populer-buku {
   width: 90%;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 35px 0 25px;
 }
@@ -403,7 +415,7 @@ img {
 
 .lihat-semua.kanan {
   width: 90%;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto 30px;
   padding-right: 0;
 }
@@ -411,7 +423,7 @@ img {
 /*  FASILITAS  */
 .fasilitas {
   width: 90%;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 45px 0 60px;
   display: flex;
@@ -449,7 +461,7 @@ img {
 /*  BUKU BARU  */
 .buku-baru {
   width: 90%;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 35px 0 20px;
   display: flex;
@@ -538,7 +550,7 @@ img {
 
 .footer-isi {
   width: 90%;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   gap: 60px;
@@ -574,7 +586,7 @@ img {
 
 .copyright {
   width: 90%;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 25px auto 0;
   padding-top: 12px;
   border-top: 1px solid #3d5f88;
@@ -716,6 +728,10 @@ img {
     width: 100%;
   }
 
+  .judul-jadwal-utama .judul-kiri {
+    font-size: clamp(12px, 3.8vw, 15px);
+  }
+
   .reservasi {
     line-height: 1.5;
   }
@@ -817,11 +833,17 @@ img {
 
   .footer-isi {
     flex-direction: column;
+    flex-wrap: nowrap;
     gap: 24px;
+  }
+
+  .footer-kolom {
+    flex: 0 1 auto;
   }
 
   .footer-kolom.lebar {
     width: 100%;
+    flex-basis: auto;
   }
 
   .footer-kolom p {
