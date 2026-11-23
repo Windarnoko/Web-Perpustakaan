@@ -90,7 +90,7 @@ img {
   outline: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .header-isi {
     flex-wrap: wrap;
     row-gap: 12px;
@@ -329,7 +329,7 @@ img {
   margin-top: 4px;
 }
 
-/*  PITA BIRU (judul section)  */
+/*judul section) biru*/
 .pita {
   background-color: #003366;
   color: white;
@@ -579,4 +579,265 @@ img {
   padding-top: 12px;
   border-top: 1px solid #3d5f88;
   font-size: 11px;
+}
+
+@media (max-width: 900px) {
+  .hero-kiri h1 {
+    font-size: 34px;
+  }
+
+  .akses-kartu {
+    gap: 20px;
+  }
+
+  .jadwal-kartu,
+  .statistik {
+    gap: 16px;
+  }
+
+  .baris-buku {
+    gap: 12px;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .baris-buku img {
+    flex: 0 0 clamp(100px, 15vw, 140px);
+    width: clamp(100px, 15vw, 140px);
+    height: auto;
+    aspect-ratio: 160 / 230;
+  }
+
+  .fasilitas {
+    gap: 14px;
+  }
+
+  .buku-baru {
+    gap: 20px;
+  }
+
+  .footer-isi {
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .footer-kolom {
+    min-width: 0;
+    flex: 1 1 220px;
+  }
+
+  .footer-kolom.lebar {
+    width: auto;
+    flex-basis: 100%;
+  }
+
+  .footer-kolom p {
+    overflow-wrap: anywhere;
+  }
+
+  .logo-footer {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1100px) {
+  .baris-buku {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .baris-buku img {
+    flex: 0 0 clamp(100px, 13vw, 140px);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    margin: 24px auto 30px;
+  }
+
+  .hero-kiri,
+  .hero-kanan {
+    width: 100%;
+  }
+
+  .hero-kiri h1 {
+    font-size: clamp(28px, 8vw, 36px);
+    line-height: 1.25;
+  }
+
+  .hero-kiri h1 br {
+    display: none;
+  }
+
+  .populer {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .hero-kanan img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .akses-kartu {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .kartu-kecil {
+    width: auto;
+    min-height: 125px;
+    padding: 12px 6px;
+  }
+
+  .kartu-kecil img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .kartu-kecil p {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .jadwal-kartu {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    margin-top: 28px;
+  }
+
+  .kotak-jadwal {
+    width: 100%;
+  }
+
+  .reservasi {
+    line-height: 1.5;
+  }
+
+  .statistik {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .statistik h3 {
+    font-size: clamp(16px, 5vw, 22px);
+  }
+
+  .statistik p {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .pita {
+    padding: 22px 5%;
+  }
+
+  .pita h2 {
+    font-size: 19px;
+    line-height: 1.4;
+  }
+
+  .baris-buku {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .baris-buku img {
+    flex: 0 0 42%;
+    width: 42%;
+    height: auto;
+    aspect-ratio: 160 / 230;
+    scroll-snap-align: start;
+  }
+
+  .baris-buku .panah {
+    display: none;
+  }
+
+  .fasilitas {
+    flex-direction: column;
+    gap: 16px;
+    padding: 30px 0 40px;
+  }
+
+  .kartu-fasilitas {
+    max-width: none;
+  }
+
+  .kartu-fasilitas img {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .buku-baru {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 28px 0 18px;
+  }
+
+  .kartu-buku {
+    width: auto;
+    min-width: 0;
+    padding: 8px;
+  }
+
+  .kartu-buku img {
+    height: auto;
+    aspect-ratio: 2 / 3;
+  }
+
+  .kartu-buku h4 {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .bawah-kartu {
+    gap: 4px;
+  }
+
+  .tombol-bulat {
+    width: 22px;
+    height: 22px;
+  }
+
+  .tombol-bulat.oranye {
+    width: 24px;
+    height: 24px;
+  }
+
+  .footer-isi {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .footer-kolom.lebar {
+    width: 100%;
+  }
+
+  .footer-kolom p {
+    overflow-wrap: anywhere;
+  }
+
+  .logo-footer {
+    flex-wrap: wrap;
+  }
+
+  .logo-footer img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .copyright {
+    line-height: 1.5;
+  }
 }
