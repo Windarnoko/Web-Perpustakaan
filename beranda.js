@@ -1,8 +1,9 @@
 const jalurPopuler = document.querySelector('#jalur-populer');
 const indikatorPopuler = document.querySelector('#indikator-populer');
 const panahPopuler = document.querySelector('#panah-populer');
+const panahPopulerSebelumnya = document.querySelector('#panah-populer-sebelumnya');
 
-if (jalurPopuler && indikatorPopuler && panahPopuler) {
+if (jalurPopuler && indikatorPopuler && panahPopuler && panahPopulerSebelumnya) {
   const sumberBukuPopuler = Array.from(
     jalurPopuler.querySelectorAll('.halaman-populer .sampul-populer')
   );
@@ -76,6 +77,10 @@ if (jalurPopuler && indikatorPopuler && panahPopuler) {
 
   panahPopuler.addEventListener('click', () => {
     tampilkanHalamanPopuler(halamanAktif + 1);
+  });
+
+  panahPopulerSebelumnya.addEventListener('click', () => {
+    tampilkanHalamanPopuler(halamanAktif - 1);
   });
 
   window.addEventListener('resize', () => {

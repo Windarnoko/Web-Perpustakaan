@@ -9,7 +9,9 @@ function tampilkanNotifikasiKoleksi(teks, gagal) {
   }
 
   notifikasi.textContent = teks;
+  notifikasi.classList.remove('terlihat');
   notifikasi.classList.toggle('gagal', Boolean(gagal));
+  void notifikasi.offsetWidth;
   notifikasi.classList.add('terlihat');
   window.clearTimeout(notifikasi.timerNotifikasi);
   notifikasi.timerNotifikasi = window.setTimeout(() => {

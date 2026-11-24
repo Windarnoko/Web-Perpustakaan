@@ -1,0 +1,413 @@
+/* Halaman perpanjangan peminjaman */
+.halaman-perpanjangan {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.halaman-perpanjangan .footer {
+  margin-top: auto;
+}
+
+.perpanjangan-main {
+  width: 90%;
+  max-width: 1100px;
+  flex: 1;
+  margin: 22px auto 70px;
+}
+
+.perpanjangan-main > h1 {
+  margin-bottom: 18px;
+  color: #003366;
+  font-size: 22px;
+}
+
+.perpanjangan-info {
+  margin: -7px 0 16px;
+  padding: 9px 12px;
+  border-left: 3px solid #d88a17;
+  border-radius: 4px;
+  background-color: #fff8eb;
+  color: #68460f;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.perpanjangan-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(270px, 0.9fr);
+  align-items: start;
+  gap: 16px;
+}
+
+.daftar-peminjaman {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.kartu-peminjaman {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr) 100px;
+  align-items: center;
+  gap: 14px;
+  min-height: 130px;
+  padding: 12px;
+  border: 1px solid #929aa4;
+  border-radius: 15px;
+  background-color: #ffffff;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.kartu-peminjaman.terpilih {
+  border-color: #2b5797;
+  background-color: #eaf3ff;
+}
+
+.kartu-peminjaman > img {
+  width: 82px;
+  height: 104px;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.kartu-peminjaman-info {
+  min-width: 0;
+}
+
+.kartu-peminjaman-info h2 {
+  margin: 2px 0 3px;
+  color: #222222;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.peminjaman-pengarang {
+  margin-bottom: 7px;
+  color: #515151;
+  font-size: 10px;
+}
+
+.status-pinjam {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.status-pinjam.aman,
+.status-peminjaman.aman {
+  color: #287b42;
+}
+
+.status-pinjam.segera,
+.status-peminjaman.segera {
+  color: #b26a00;
+}
+
+.status-pinjam.terlambat,
+.status-peminjaman.terlambat {
+  color: #bd2424;
+}
+
+.peminjaman-metadata {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 12px;
+}
+
+.peminjaman-metadata dt {
+  color: #656565;
+  font-size: 9px;
+}
+
+.peminjaman-metadata dd {
+  overflow-wrap: anywhere;
+  font-size: 9px;
+}
+
+.kartu-peminjaman-aksi {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.kartu-peminjaman-aksi button {
+  min-width: 88px;
+  padding: 6px 12px;
+  border: 1px solid #003366;
+  border-radius: 18px;
+  background-color: #ffffff;
+  color: #003366;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 10px;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.kartu-peminjaman-aksi button:hover,
+.kartu-peminjaman-aksi button:focus-visible,
+.kartu-peminjaman-aksi button.dipilih {
+  background-color: #003366;
+  color: #ffffff;
+}
+
+.kartu-peminjaman-aksi button:focus-visible {
+  outline: 2px solid #7da8db;
+  outline-offset: 2px;
+}
+
+.kartu-peminjaman-aksi button:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.status-kuota-habis {
+  color: #9c2c2c;
+  font-size: 9px;
+  text-align: right;
+}
+
+.panel-perpanjangan {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #969da5;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+.panel-perpanjangan > h2 {
+  margin-bottom: 14px;
+  color: #222222;
+  font-size: 14px;
+}
+
+.panel-pilih-info {
+  color: #666666;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.panel-buku {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 13px;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #e9ecef;
+}
+
+.panel-buku > img {
+  width: 48px;
+  height: 62px;
+  flex: 0 0 48px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.panel-buku h3 {
+  margin-bottom: 3px;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.panel-buku p {
+  margin-bottom: 4px;
+  color: #555555;
+  font-size: 9px;
+}
+
+.status-peminjaman {
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.panel-metadata {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 15px;
+}
+
+.panel-metadata div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.panel-metadata dt,
+.panel-metadata dd {
+  font-size: 10px;
+}
+
+.panel-metadata dd {
+  text-align: right;
+}
+
+.pilihan-durasi {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+
+.pilihan-durasi span {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.pilihan-durasi select {
+  width: 100%;
+  min-height: 38px;
+  padding: 7px 10px;
+  border: 1px solid #b8bec5;
+  border-radius: 7px;
+  background-color: #ffffff;
+  color: #333333;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.tanggal-baru {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 10px;
+}
+
+.tanggal-baru strong {
+  color: #14579a;
+  text-align: right;
+}
+
+.aturan-perpanjangan {
+  margin-bottom: 13px;
+  color: #555555;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.tombol-ajukan-perpanjangan {
+  width: 100%;
+  min-height: 38px;
+  padding: 9px 12px;
+  border: 0;
+  border-radius: 7px;
+  background-color: #ff9800;
+  color: #171717;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  transition: background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.tombol-ajukan-perpanjangan:hover,
+.tombol-ajukan-perpanjangan:focus-visible {
+  background-color: #e78900;
+  box-shadow: 0 3px 8px rgba(196, 112, 0, 0.25);
+  outline: none;
+}
+
+.tombol-ajukan-perpanjangan:disabled {
+  background-color: #cccccc;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.pesan-perpanjangan {
+  margin-top: 11px;
+  color: #236d38;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.pesan-perpanjangan.pesan-gagal {
+  color: #a12424;
+}
+
+.peminjaman-kosong {
+  padding: 28px 20px;
+  border: 1px dashed #9ba7b5;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.peminjaman-kosong h2 {
+  margin-bottom: 8px;
+  color: #18395d;
+  font-size: 15px;
+}
+
+.peminjaman-kosong p {
+  margin-bottom: 12px;
+  color: #555555;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.peminjaman-kosong a {
+  color: #14579a;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+#panel-detail-perpanjangan[hidden],
+#daftar-peminjaman[hidden],
+#peminjaman-kosong[hidden],
+#pesan-perpanjangan[hidden],
+#pesan-gagal-muat[hidden] {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .perpanjangan-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .panel-perpanjangan {
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .perpanjangan-main {
+    margin-top: 30px;
+    margin-bottom: 48px;
+  }
+
+  .perpanjangan-main > h1 {
+    font-size: 19px;
+  }
+
+  .perpanjangan-info {
+    font-size: 9px;
+  }
+
+  .kartu-peminjaman {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .kartu-peminjaman > img {
+    width: 66px;
+    height: 90px;
+  }
+
+  .kartu-peminjaman-info h2 {
+    font-size: 12px;
+  }
+
+  .kartu-peminjaman-aksi {
+    grid-column: 2;
+    justify-content: flex-start;
+  }
+
+  .panel-perpanjangan {
+    padding: 15px;
+  }
+}
+

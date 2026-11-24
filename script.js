@@ -8,8 +8,13 @@ const filterTahun = document.querySelector('#filter-tahun');
 const urutkanKatalog = document.querySelector('#urutkan-katalog');
 const katalogJumlah = document.querySelector('.katalog-jumlah');
 const katalogKosong = document.querySelector('.katalog-kosong');
-const jenisAwal = new URLSearchParams(window.location.search).get('jenis');
+const parameterPencarian = new URLSearchParams(window.location.search);
+const jenisAwal = parameterPencarian.get('jenis');
 let tipeAktif = 'semua';
+
+if (parameterPencarian.has('q')) {
+  katalogQuery.value = parameterPencarian.get('q');
+}
 
 if (katalogTabs.some((tab) => tab.dataset.tipe === jenisAwal)) {
   tipeAktif = jenisAwal;

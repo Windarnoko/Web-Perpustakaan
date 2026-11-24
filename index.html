@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perpustakaan Kota Madiun</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="beranda.css">
   <script src="data-buku.js" defer></script>
   <script src="koleksi-store.js" defer></script>
   <script src="koleksi-ui.js" defer></script>
   <script src="beranda.js" defer></script>
 </head>
-<body>
+<body class="halaman-beranda">
 
   <!-- header -->
   <header class="header">
@@ -41,10 +42,11 @@
       </h1>
       <hr>
 
-      <div class="kotak-cari">
-        <input type="text" placeholder="Cari judul, penulis, atau topik...">
+      <form class="kotak-cari" action="katalog.html#daftar-katalog" method="get" role="search">
+        <label class="sr-only" for="pencarian-beranda">Cari judul, penulis, atau topik</label>
+        <input id="pencarian-beranda" name="q" type="search" placeholder="Cari judul, penulis, atau topik...">
         <button>Cari</button>
-      </div>
+      </form>
 
       <div class="populer">
         <span>Pencarian populer:</span>
@@ -161,6 +163,7 @@
         </div>
       </div>
       <button class="panah-populer" id="panah-populer" type="button" aria-label="Halaman buku populer berikutnya">&gt;</button>
+      <button class="panah-populer panah-populer-kiri" id="panah-populer-sebelumnya" type="button" aria-label="Halaman buku populer sebelumnya">&lt;</button>
     </div>
 
     <div class="indikator-populer" id="indikator-populer" role="group" aria-label="Halaman buku populer"></div>

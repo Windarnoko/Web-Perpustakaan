@@ -205,7 +205,7 @@ document.querySelector('#ajukan-perpanjangan').addEventListener('click', () => {
     window.penyimpananPeminjaman.simpan(daftarPeminjaman);
     render();
     pesanPerpanjangan.textContent =
-      'Perubahan tersimpan di browser ini sebagai simulasi, tetapi belum dikirim ke perpustakaan.';
+      'Perpanjangan berhasil disimpan di browser ini sebagai simulasi.';
     pesanPerpanjangan.hidden = false;
   } catch (error) {
     peminjaman.jatuhTempo = jatuhTempoSebelumnya;

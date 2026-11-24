@@ -1,0 +1,169 @@
+/* Halaman detail buku */
+.detail-buku-main {
+  width: 90%;
+  max-width: 1200px;
+  min-height: 390px;
+  margin: 70px auto 90px;
+}
+
+.detail-buku {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  align-items: start;
+  gap: 36px;
+}
+
+.detail-buku[hidden],
+.detail-buku-kosong[hidden] {
+  display: none;
+}
+
+.detail-buku-kiri {
+  min-width: 0;
+}
+
+.detail-buku-sampul {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 7px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.detail-buku-aksi {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.tombol-detail {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #003366;
+  border-radius: 7px;
+  background-color: #ffffff;
+  color: #003366;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  text-align: center;
+  transition: background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.tombol-detail.utama,
+.tombol-detail:hover,
+.tombol-detail:focus-visible {
+  background-color: #003366;
+  color: #ffffff;
+}
+
+.tombol-detail:hover,
+.tombol-detail:focus-visible {
+  box-shadow: 0 4px 10px rgba(0, 51, 102, 0.2);
+  outline: none;
+}
+
+.detail-buku-info {
+  min-width: 0;
+}
+
+.detail-buku-info h1 {
+  margin-bottom: 10px;
+  color: #111111;
+  font-size: 23px;
+  line-height: 1.35;
+}
+
+.detail-buku-meta {
+  margin-bottom: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.detail-buku-tag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detail-buku-tag span {
+  padding: 3px 9px;
+  border: 1px solid #555555;
+  border-radius: 14px;
+  font-size: 10px;
+}
+
+.detail-buku-sinopsis {
+  margin-top: 20px;
+}
+
+.detail-buku-sinopsis h2 {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.detail-buku-sinopsis p {
+  max-width: 760px;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.detail-buku-kosong {
+  padding: 70px 0;
+  text-align: center;
+}
+
+.detail-buku-kosong h1 {
+  margin-bottom: 10px;
+  color: #003366;
+  font-size: 26px;
+}
+
+.detail-buku-kosong p {
+  margin-bottom: 16px;
+}
+
+.detail-buku-kosong a {
+  color: #003366;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .detail-buku-main {
+    margin-top: 50px;
+  }
+
+  .detail-buku {
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .detail-buku-main {
+    min-height: 0;
+    margin-top: 30px;
+    margin-bottom: 48px;
+  }
+
+  .detail-buku {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .detail-buku-kiri {
+    width: min(100%, 190px);
+    margin: 0 auto;
+  }
+
+  .detail-buku-info h1 {
+    font-size: 20px;
+  }
+
+  .detail-buku-sinopsis p {
+    font-size: 12px;
+  }
+}
+

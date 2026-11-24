@@ -1,0 +1,500 @@
+/* Halaman reservasi */
+.halaman-reservasi {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.halaman-reservasi .footer {
+  margin-top: auto;
+}
+
+.reservasi-main {
+  width: 90%;
+  max-width: 1100px;
+  flex: 1;
+  margin: 48px auto 72px;
+}
+
+.reservasi-main > h1 {
+  margin-bottom: 8px;
+  color: #003366;
+  font-size: 26px;
+}
+
+.reservasi-pengantar {
+  color: #555555;
+  line-height: 1.6;
+}
+
+.reservasi-stepper {
+  width: min(100%, 520px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 30px auto;
+  list-style: none;
+}
+
+.reservasi-stepper[hidden] {
+  display: none;
+}
+
+.reservasi-stepper li:not(.reservasi-stepper-garis) {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 9px;
+  color: #777777;
+  font-size: 12px;
+}
+
+.reservasi-stepper li > span:first-child {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  flex: 0 0 28px;
+  place-items: center;
+  border: 1px solid #aeb8c5;
+  border-radius: 50%;
+  color: #687382;
+  font-weight: 700;
+}
+
+.reservasi-stepper li.aktif,
+.reservasi-stepper li.selesai {
+  color: #003366;
+  font-weight: 700;
+}
+
+.reservasi-stepper li.aktif > span:first-child,
+.reservasi-stepper li.selesai > span:first-child {
+  border-color: #003366;
+  background-color: #003366;
+  color: #ffffff;
+}
+
+.reservasi-stepper .reservasi-stepper-garis {
+  height: 1px;
+  flex: 1 1 36px;
+  background-color: #d3d9e1;
+}
+
+.reservasi-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(250px, 0.8fr);
+  align-items: start;
+  gap: 18px;
+}
+
+.reservasi-kolom-kiri {
+  min-width: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.reservasi-buku,
+.reservasi-pengambilan,
+.reservasi-konfirmasi,
+.reservasi-ringkasan {
+  border: 1px solid #e0e5eb;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 3px 12px rgba(0, 30, 65, 0.06);
+}
+
+.reservasi-buku {
+  display: flex;
+  gap: 18px;
+  padding: 18px;
+}
+
+.reservasi-buku > img {
+  width: 118px;
+  height: 164px;
+  flex: 0 0 118px;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+.reservasi-buku-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.reservasi-status {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: #287b42;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.reservasi-buku-info h2 {
+  margin-bottom: 5px;
+  color: #18395d;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.reservasi-buku-info > p {
+  margin-bottom: 12px;
+  color: #666666;
+  font-size: 12px;
+}
+
+.reservasi-metadata {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px 14px;
+}
+
+.reservasi-metadata div,
+.reservasi-ringkasan-buku dl div {
+  min-width: 0;
+}
+
+.reservasi-metadata dt,
+.reservasi-ringkasan-buku dt {
+  margin-bottom: 3px;
+  color: #777777;
+  font-size: 10px;
+}
+
+.reservasi-metadata dd,
+.reservasi-ringkasan-buku dd {
+  overflow-wrap: anywhere;
+  color: #292929;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.reservasi-ganti-buku {
+  display: inline-block;
+  margin-top: 12px;
+  color: #14579a;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.reservasi-pengambilan {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 18px;
+}
+
+.reservasi-pengambilan legend {
+  padding: 0 7px;
+  color: #18395d;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.reservasi-metode {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 10px;
+}
+
+.reservasi-label,
+.reservasi-field > span {
+  color: #343434;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.reservasi-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #444444;
+  font-size: 12px;
+}
+
+.reservasi-radio input,
+.reservasi-persetujuan input {
+  accent-color: #003366;
+}
+
+.reservasi-field {
+  min-width: 0;
+  display: grid;
+  gap: 7px;
+}
+
+.reservasi-field input,
+.reservasi-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 38px;
+  padding: 8px 10px;
+  border: 1px solid #cbd3dd;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #303030;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.reservasi-field input:focus-visible,
+.reservasi-field select:focus-visible {
+  border-color: #14579a;
+  outline: 2px solid rgba(20, 87, 154, 0.18);
+}
+
+.reservasi-konfirmasi {
+  display: grid;
+  gap: 12px;
+  padding: 22px;
+}
+
+.reservasi-konfirmasi h2,
+.reservasi-ringkasan > h2 {
+  color: #18395d;
+  font-size: 17px;
+}
+
+.tombol-reservasi {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border: 1px solid #003366;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #003366;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  text-align: center;
+  transition: background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.tombol-reservasi.utama,
+.tombol-reservasi:hover,
+.tombol-reservasi:focus-visible {
+  background-color: #003366;
+  color: #ffffff;
+}
+
+.tombol-reservasi:hover,
+.tombol-reservasi:focus-visible {
+  box-shadow: 0 4px 10px rgba(0, 51, 102, 0.2);
+  outline: none;
+}
+
+.reservasi-persetujuan {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 17px;
+  color: #4b4b4b;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.reservasi-persetujuan input {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.reservasi-pesan {
+  margin-top: 14px;
+  padding: 11px 13px;
+  border-left: 3px solid #bd7b18;
+  border-radius: 4px;
+  background-color: #fff7e8;
+  color: #66440e;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.reservasi-ringkasan {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.reservasi-ringkasan > h2 {
+  margin-bottom: 20px;
+}
+
+.reservasi-ringkasan-buku {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.reservasi-ringkasan-buku > img {
+  width: 100px;
+  height: 138px;
+  flex: 0 0 100px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.reservasi-ringkasan-buku dl {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 20px;
+}
+
+.reservasi-ringkasan-buku dl div:first-child {
+  grid-column: 1 / -1;
+}
+
+.reservasi-ringkasan hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #e2e6eb;
+}
+
+.reservasi-ketentuan {
+  padding-left: 19px;
+  color: #555555;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.reservasi-ringkasan-aksi {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.reservasi-tidak-ditemukan {
+  padding: 36px 20px;
+  border: 1px solid #e0e5eb;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.reservasi-tidak-ditemukan h2 {
+  margin-bottom: 10px;
+  color: #18395d;
+  font-size: 18px;
+}
+
+.reservasi-tidak-ditemukan p {
+  margin-bottom: 14px;
+}
+
+.reservasi-tidak-ditemukan a {
+  color: #14579a;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+#reservasi-data[hidden],
+#reservasi-ringkasan[hidden],
+#reservasi-tidak-ditemukan[hidden] {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .reservasi-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .reservasi-konfirmasi {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .reservasi-konfirmasi h2 {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .reservasi-main {
+    margin-top: 30px;
+    margin-bottom: 48px;
+  }
+
+  .reservasi-main > h1 {
+    font-size: 21px;
+  }
+
+  .reservasi-pengantar {
+    font-size: 12px;
+  }
+
+  .reservasi-stepper {
+    gap: 8px;
+    margin: 24px auto;
+  }
+
+  .reservasi-stepper li:not(.reservasi-stepper-garis) {
+    gap: 6px;
+    font-size: 10px;
+  }
+
+  .reservasi-buku {
+    gap: 12px;
+    padding: 13px;
+  }
+
+  .reservasi-buku > img {
+    width: 86px;
+    height: 122px;
+    flex-basis: 86px;
+  }
+
+  .reservasi-buku-info h2 {
+    font-size: 14px;
+  }
+
+  .reservasi-metadata {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .reservasi-pengambilan {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .reservasi-metode {
+    grid-column: auto;
+  }
+
+  .reservasi-konfirmasi {
+    padding: 17px;
+  }
+
+  .reservasi-ringkasan {
+    padding: 17px;
+  }
+
+  .reservasi-ringkasan-buku {
+    gap: 13px;
+  }
+
+  .reservasi-ringkasan-buku > img {
+    width: 76px;
+    height: 106px;
+    flex-basis: 76px;
+  }
+
+  .reservasi-ringkasan-buku dl {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .reservasi-ringkasan-buku dl div:first-child {
+    grid-column: auto;
+  }
+
+  .reservasi-ringkasan-aksi {
+    flex-direction: column;
+  }
+}
+
