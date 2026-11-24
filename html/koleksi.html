@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koleksi - Perpustakaan Kota Madiun</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/koleksi.css">
+  <script src="../js/page-transition.js" defer></script>
+  <script src="../js/data-buku.js" defer></script>
+  <script src="../js/koleksi-store.js" defer></script>
+  <script src="../js/koleksi-ui.js" defer></script>
+  <script src="../js/koleksi.js" defer></script>
+</head>
+<body class="halaman-koleksi">
+  <!-- Header dan navigasi -->
+  <header class="header">
+    <div class="header-isi">
+      <a href="index.html" aria-label="Beranda Perpustakaan Kota Madiun">
+        <img src="../image/logo.webp" alt="Logo Kota Madiun" class="logo">
+      </a>
+      <nav class="menu" aria-label="Navigasi utama">
+        <a href="index.html">Beranda</a>
+        <a href="koleksi.html" aria-current="page">Koleksi</a>
+        <a href="katalog.html">Katalog</a>
+        <a href="#">Layanan</a>
+      </nav>
+      <a href="#" class="akun" aria-label="Profil pengguna" title="Profil pengguna">
+        <img src="../image/profil.webp" alt="Foto profil" class="foto-profil">
+      </a>
+    </div>
+  </header>
+
+  <main class="konten-koleksi">
+    <div class="judul-koleksi">
+      <h1>Koleksi Saya</h1>
+      <button class="tombol-buat-koleksi" type="button" data-buat-koleksi>+ Buat Koleksi</button>
+    </div>
+
+    <!-- Pintasan ke daftar koleksi -->
+    <nav class="menu-koleksi" aria-label="Pintasan koleksi">
+      <a href="#favorit" class="kotak-menu">
+        <span class="ikon-koleksi" aria-hidden="true">♡</span>
+        <span>Favorit <strong id="jumlah-favorit">0</strong></span>
+      </a>
+      <a href="#koleksi-saya" class="kotak-menu">
+        <span class="ikon-koleksi" aria-hidden="true">▣</span>
+        <span>Koleksi Saya <strong id="jumlah-koleksi">0</strong></span>
+      </a>
+    </nav>
+
+    <section class="koleksi-section" id="favorit">
+      <h2>Buku Favorit</h2>
+      <div class="baris-buku daftar-buku-koleksi" id="daftar-favorit" aria-live="polite"></div>
+      <p class="pesan-koleksi-kosong" id="pesan-favorit">Belum ada buku favorit. Tekan ikon hati pada buku untuk menambahkannya.</p>
+    </section>
+
+    <section class="koleksi-section" id="koleksi-saya">
+      <h2>Koleksi Saya</h2>
+      <div id="daftar-koleksi-pribadi"></div>
+      <p class="pesan-koleksi-kosong" id="pesan-koleksi-kosong">Belum ada koleksi buatan sendiri. Buat koleksi untuk mulai mengelompokkan buku.</p>
+      <p class="pesan-koleksi-error" id="pesan-koleksi-error" role="alert" hidden></p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-isi">
+      <div class="footer-kolom lebar">
+        <h4>Tentang Kami</h4>
+        <p>Perpustakaan Kota Madiun menyediakan layanan informasi dan literasi yang memudahkan berbagai kalangan masyarakat untuk membaca, belajar, dan meminjam koleksi buku secara mudah.</p>
+      </div>
+      <div class="footer-kolom">
+        <h4>Hubungi Kami</h4>
+        <p>Kontak: +62 812 3456 7890</p>
+        <p>Email: perpustakaan@madiunkota.go.id</p>
+      </div>
+      <div class="footer-kolom">
+        <h4>Link Terkait</h4>
+        <div class="logo-footer">
+          <a href="https://www.madiunkota.go.id/" target="_blank" rel="noopener" title="Pemerintah Kota Madiun">
+            <img src="../image/link1.webp" alt="Pemerintah Kota Madiun">
+          </a>
+          <a href="https://disperpusip.jatimprov.go.id/" target="_blank" rel="noopener" title="Dinas Perpustakaan dan Kearsipan Provinsi Jawa Timur">
+            <img src="../image/link2.webp" alt="Dinas Perpustakaan dan Kearsipan Provinsi Jawa Timur">
+          </a>
+          <a href="https://perpusnas.go.id/berita/ikatan-pustakawan-indonesia-didorong-memiliki-peran-dalam-pengembangan-perpustakaan" target="_blank" rel="noopener" title="Perpustakaan Nasional">
+            <img src="../image/link3.webp" alt="Perpustakaan Nasional">
+          </a>
+          <a href="https://www.madiunkota.go.id/" target="_blank" rel="noopener" title="Kota Madiun">
+            <img src="../image/link4.webp" alt="Kota Madiun">
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">Copyright © 2026 Dinas Perpustakaan dan Kearsipan Kota Madiun</p>
+  </footer>
+</body>
+</html>

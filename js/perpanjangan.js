@@ -51,7 +51,7 @@ function dapatkanBuku(peminjaman) {
   return {
     judul: 'Buku tidak ditemukan di katalog',
     pengarang: 'Informasi belum tersedia',
-    sampul: 'image/buku.webp',
+    sampul: '../image/buku.webp',
     kategori: 'Belum tersedia',
     jenis: 'Buku'
   };

@@ -5,20 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Katalog Perpustakaan Kota Madiun</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="common.css">
-  <link rel="stylesheet" href="katalog.css">
-  <script src="page-transition.js" defer></script>
-  <script src="data-buku.js" defer></script>
-  <script src="koleksi-store.js" defer></script>
-  <script src="script.js" defer></script>
-  <script src="koleksi-ui.js" defer></script>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/katalog.css">
+  <script src="../js/page-transition.js" defer></script>
+  <script src="../js/data-buku.js" defer></script>
+  <script src="../js/koleksi-store.js" defer></script>
+  <script src="../js/script.js" defer></script>
+  <script src="../js/koleksi-ui.js" defer></script>
 </head>
 <body class="halaman-katalog">
   <!-- Header dan navigasi -->
   <header class="header">
     <div class="header-isi">
       <a href="index.html" aria-label="Beranda Perpustakaan Kota Madiun">
-        <img src="image/logo.webp" alt="Logo Kota Madiun" class="logo">
+        <img src="../image/logo.webp" alt="Logo Kota Madiun" class="logo">
       </a>
       <nav class="menu" aria-label="Navigasi utama">
         <a href="index.html">Beranda</a>
@@ -27,7 +27,7 @@
         <a href="index.html">Layanan</a>
       </nav>
       <a href="#" class="akun" aria-label="Profil pengguna" title="Profil pengguna">
-        <img src="image/profil.webp" alt="Foto profil" class="foto-profil">
+        <img src="../image/profil.webp" alt="Foto profil" class="foto-profil">
       </a>
     </div>
   </header>
@@ -57,9 +57,9 @@
       </div>
 
       <div class="katalog-visual" aria-hidden="true">
-        <img class="sampul-katalog sampul-katalog-kiri" src="image/cover5.webp" alt="">
-        <img class="sampul-katalog sampul-katalog-tengah" src="image/cover3.webp" alt="">
-        <img class="sampul-katalog sampul-katalog-kanan" src="image/cover1.webp" alt="">
+        <img class="sampul-katalog sampul-katalog-kiri" src="../image/cover5.webp" alt="">
+        <img class="sampul-katalog sampul-katalog-tengah" src="../image/cover3.webp" alt="">
+        <img class="sampul-katalog sampul-katalog-kanan" src="../image/cover1.webp" alt="">
       </div>
     </section>
 
@@ -119,7 +119,7 @@
       <div class="katalog-grid">
         <article class="kartu-buku item-katalog" data-id="tokyo-zodiac" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="9" data-judul="The Tokyo Zodiac Murders" data-pengarang="Soji Shimada">
           <a class="tautan-detail-buku" href="detail-buku.html?id=tokyo-zodiac">
-            <img src="image/cover1.webp" alt="Sampul The Tokyo Zodiac Murders">
+            <img src="../image/cover1.webp" alt="Sampul The Tokyo Zodiac Murders">
             <h3>The Tokyo Zodiac Murders</h3>
           </a>
           <p class="penulis">Soji Shimada</p>
@@ -134,7 +134,7 @@
 
         <article class="kartu-buku item-katalog" data-id="good-girl-murder" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="8" data-judul="A Good Girl's Guide to Murder" data-pengarang="Holly Jackson">
           <a class="tautan-detail-buku" href="detail-buku.html?id=good-girl-murder">
-            <img src="image/cover2.webp" alt="Sampul A Good Girl's Guide to Murder">
+            <img src="../image/cover2.webp" alt="Sampul A Good Girl's Guide to Murder">
             <h3>A Good Girl's Guide to Murder</h3>
           </a>
           <p class="penulis">Holly Jackson</p>
@@ -149,7 +149,7 @@
 
         <article class="kartu-buku item-katalog" data-id="teka-teki-gambar-aneh" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="7" data-judul="Teka-Teki Gambar Aneh" data-pengarang="Uketsu">
           <a class="tautan-detail-buku" href="detail-buku.html?id=teka-teki-gambar-aneh">
-            <img src="image/cover3.webp" alt="Sampul Teka-Teki Gambar Aneh">
+            <img src="../image/cover3.webp" alt="Sampul Teka-Teki Gambar Aneh">
             <h3>Teka-Teki Gambar Aneh</h3>
           </a>
           <p class="penulis">Uketsu</p>
@@ -164,7 +164,7 @@
 
         <article class="kartu-buku item-katalog" data-id="kasus-honjin" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="6" data-judul="Kasus Pembunuhan Honjin" data-pengarang="Seishi Yokomizo">
           <a class="tautan-detail-buku" href="detail-buku.html?id=kasus-honjin">
-            <img src="image/cover4.webp" alt="Sampul Kasus Pembunuhan Honjin">
+            <img src="../image/cover4.webp" alt="Sampul Kasus Pembunuhan Honjin">
             <h3>Kasus Pembunuhan Honjin</h3>
           </a>
           <p class="penulis">Seishi Yokomizo</p>
@@ -179,7 +179,7 @@
 
         <article class="kartu-buku item-katalog" data-id="petaka-inugami" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="5" data-judul="Petaka Keluarga Inugami" data-pengarang="Seishi Yokomizo">
           <a class="tautan-detail-buku" href="detail-buku.html?id=petaka-inugami">
-            <img src="image/cover5.webp" alt="Sampul Petaka Keluarga Inugami">
+            <img src="../image/cover5.webp" alt="Sampul Petaka Keluarga Inugami">
             <h3>Petaka Keluarga Inugami</h3>
           </a>
           <p class="penulis">Seishi Yokomizo</p>
@@ -194,7 +194,7 @@
 
         <article class="kartu-buku item-katalog" data-id="hantu-rumah-kos" data-tipe="buku" data-kategori="misteri" data-tahun="tidak-dicantumkan" data-populer="4" data-judul="Hantu di Rumah Kos" data-pengarang="Dini W. Tamam &amp; Erby S.">
           <a class="tautan-detail-buku" href="detail-buku.html?id=hantu-rumah-kos">
-            <img src="image/cover6.webp" alt="Sampul Hantu di Rumah Kos">
+            <img src="../image/cover6.webp" alt="Sampul Hantu di Rumah Kos">
             <h3>Hantu di Rumah Kos</h3>
           </a>
           <p class="penulis">Dini W. Tamam &amp; Erby S.</p>
@@ -209,7 +209,7 @@
 
         <article class="kartu-buku item-katalog" data-id="tujuh" data-tipe="buku" data-kategori="fiksi" data-tahun="tidak-dicantumkan" data-populer="3" data-judul="Tujuh" data-pengarang="Abdul Rasyid B Damanik">
           <a class="tautan-detail-buku" href="detail-buku.html?id=tujuh">
-            <img src="image/baru1.webp" alt="Sampul Tujuh">
+            <img src="../image/baru1.webp" alt="Sampul Tujuh">
             <h3>Tujuh</h3>
           </a>
           <p class="penulis">Abdul Rasyid B Damanik</p>
@@ -224,7 +224,7 @@
 
         <article class="kartu-buku item-katalog" data-id="kiri-sampai-sini" data-tipe="buku" data-kategori="fiksi" data-tahun="tidak-dicantumkan" data-populer="2" data-judul="Kiri Sampai Sini" data-pengarang="Faroq Zamzami">
           <a class="tautan-detail-buku" href="detail-buku.html?id=kiri-sampai-sini">
-            <img src="image/baru3.webp" alt="Sampul Kiri Sampai Sini">
+            <img src="../image/baru3.webp" alt="Sampul Kiri Sampai Sini">
             <h3>Kiri Sampai Sini</h3>
           </a>
           <p class="penulis">Faroq Zamzami</p>
@@ -239,7 +239,7 @@
 
         <article class="kartu-buku item-katalog" data-id="pulang" data-tipe="buku" data-kategori="fiksi" data-tahun="tidak-dicantumkan" data-populer="1" data-judul="Pulang" data-pengarang="Tere Liye">
           <a class="tautan-detail-buku" href="detail-buku.html?id=pulang">
-            <img src="image/baru2.webp" alt="Sampul Pulang">
+            <img src="../image/baru2.webp" alt="Sampul Pulang">
             <h3>Pulang</h3>
           </a>
           <p class="penulis">Tere Liye</p>
@@ -279,16 +279,16 @@
         <h4>Link Terkait</h4>
         <div class="logo-footer">
           <a href="https://www.madiunkota.go.id/" target="_blank" rel="noopener" title="Pemerintah Kota Madiun">
-            <img src="image/link1.webp" alt="Pemerintah Kota Madiun">
+            <img src="../image/link1.webp" alt="Pemerintah Kota Madiun">
           </a>
           <a href="https://disperpusip.jatimprov.go.id/" target="_blank" rel="noopener" title="Dinas Perpustakaan dan Kearsipan Provinsi Jawa Timur">
-            <img src="image/link2.webp" alt="Dinas Perpustakaan dan Kearsipan Provinsi Jawa Timur">
+            <img src="../image/link2.webp" alt="Dinas Perpustakaan dan Kearsipan Provinsi Jawa Timur">
           </a>
           <a href="https://perpusnas.go.id/berita/ikatan-pustakawan-indonesia-didorong-memiliki-peran-dalam-pengembangan-perpustakaan" target="_blank" rel="noopener" title="Perpustakaan Nasional">
-            <img src="image/link3.webp" alt="Perpustakaan Nasional">
+            <img src="../image/link3.webp" alt="Perpustakaan Nasional">
           </a>
           <a href="https://www.madiunkota.go.id/" target="_blank" rel="noopener" title="Kota Madiun">
-            <img src="image/link4.webp" alt="Kota Madiun">
+            <img src="../image/link4.webp" alt="Kota Madiun">
           </a>
         </div>
       </div>
