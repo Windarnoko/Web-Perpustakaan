@@ -66,6 +66,11 @@ img {
   outline: none;
 }
 
+.menu a[aria-current="page"] {
+  background-color: #003366;
+  color: #ffffff;
+}
+
 .akun {
   width: 28px;
   height: 28px;
@@ -88,6 +93,36 @@ img {
   color: #0b0b8c;
   background-color: #e8efff;
   outline: none;
+}
+
+body {
+  animation: halaman-masuk 220ms ease-out both;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+body.transisi-keluar {
+  animation: none;
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+@keyframes halaman-masuk {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+    transition: none;
+  }
 }
 
 /* Header responsif */

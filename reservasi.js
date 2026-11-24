@@ -155,7 +155,7 @@ if (!bukuReservasi) {
 
   formReservasi.addEventListener('submit', (event) => {
     event.preventDefault();
-    window.location.href = buatUrlLangkah('konfirmasi');
+    window.navigasiDenganTransisi(buatUrlLangkah('konfirmasi'));
   });
 
   document.querySelector('#ajukan-peminjaman').addEventListener('click', () => {
@@ -175,7 +175,9 @@ if (!bukuReservasi) {
       const daftarPeminjaman = window.penyimpananPeminjaman.baca();
       daftarPeminjaman.push(peminjamanBaru);
       window.penyimpananPeminjaman.simpan(daftarPeminjaman);
-      window.location.href = `perpanjangan.html?pinjaman=${encodeURIComponent(peminjamanBaru.id)}`;
+      window.navigasiDenganTransisi(
+        `perpanjangan.html?pinjaman=${encodeURIComponent(peminjamanBaru.id)}`
+      );
     } catch (error) {
       pesanPengajuan.textContent =
         'Pengajuan belum tersimpan. Penyimpanan browser tidak tersedia atau data peminjaman bermasalah.';
