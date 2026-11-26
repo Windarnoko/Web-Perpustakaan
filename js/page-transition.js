@@ -1,6 +1,12 @@
 (() => {
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const prefetched = new Set();
   let navigating = false;
+
+  window.addEventListener("pagereveal", (event) => {
+    if (event.viewTransition) {
+      document.documentElement.classList.add("transisi-lintas-halaman");
+    }
+  });
 
   window.navigasiDenganTransisi = (destination) => {
     const url = new URL(destination, window.location.href);
@@ -16,21 +22,49 @@
       return;
     }
 
-    if (reducedMotion.matches || url.origin !== window.location.origin) {
-      window.location.assign(url.href);
-      return;
-    }
-
     if (navigating) {
       return;
     }
 
     navigating = true;
-    document.body.classList.add("transisi-keluar");
-    window.setTimeout(() => {
-      window.location.assign(url.href);
-    }, 180);
+    window.location.assign(url.href);
   };
+
+  const prefetchTautan = (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) {
+      return;
+    }
+
+    const link = target.closest("a[href]");
+    if (
+      !(link instanceof HTMLAnchorElement) ||
+      link.hasAttribute("download") ||
+      (link.target && link.target !== "_self") ||
+      link.relList.contains("external")
+    ) {
+      return;
+    }
+
+    const destination = new URL(link.href, window.location.href);
+    if (
+      destination.origin !== window.location.origin ||
+      (destination.pathname === window.location.pathname &&
+        destination.search === window.location.search) ||
+      prefetched.has(destination.href)
+    ) {
+      return;
+    }
+
+    const prefetch = document.createElement("link");
+    prefetch.rel = "prefetch";
+    prefetch.href = destination.href;
+    document.head.append(prefetch);
+    prefetched.add(destination.href);
+  };
+
+  document.addEventListener("pointerover", prefetchTautan);
+  document.addEventListener("focusin", prefetchTautan);
 
   document.addEventListener("click", (event) => {
     if (
