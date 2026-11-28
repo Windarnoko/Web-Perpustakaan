@@ -232,20 +232,59 @@
 }
 
 .katalog-grid .item-katalog {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
   width: 100%;
-  max-width: 190px;
+  max-width: 180px;
+  height: 360px;
   min-width: 0;
 }
 
 .katalog-grid .item-katalog img {
-  height: auto;
-  aspect-ratio: 3 / 4;
+  display: block;
+  width: 100%;
+  height: 210px;
+  flex: 0 0 210px;
+  object-fit: cover;
 }
 
 .katalog-grid .item-katalog h3 {
+  display: -webkit-box;
+  min-height: 34px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   font-size: 12px;
   line-height: 1.4;
   margin-bottom: 4px;
+}
+
+.katalog-grid .item-katalog .penulis {
+  display: -webkit-box;
+  min-height: 28px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  margin-bottom: 8px;
+}
+
+.katalog-grid .item-katalog .bawah-kartu {
+  gap: 6px;
+  margin-top: auto;
+}
+
+.katalog-grid .item-katalog .status {
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.katalog-grid .item-katalog .tombol-bulat {
+  flex: 0 0 24px;
+}
+
+.katalog-grid .item-katalog .tombol-bulat.oranye {
+  flex-basis: 28px;
 }
 
 .katalog-grid .item-katalog[hidden] {
@@ -296,7 +335,7 @@
   }
 
   .katalog-grid .item-katalog {
-    max-width: 210px;
+    max-width: 180px;
   }
 }
 
@@ -327,7 +366,7 @@
   }
 
   .katalog-grid .item-katalog {
-    max-width: 240px;
+    max-width: 180px;
   }
 }
 
@@ -396,8 +435,15 @@
   }
 
   .katalog-grid .item-katalog {
+    width: 100%;
+    height: 340px;
     max-width: none;
     padding: 8px;
+  }
+
+  .katalog-grid .item-katalog img {
+    height: 190px;
+    flex-basis: 190px;
   }
 
   .katalog-grid .item-katalog h3 {
