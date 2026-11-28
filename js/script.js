@@ -1,7 +1,7 @@
 const katalogForm = document.querySelector('.katalog-form-cari');
 const katalogQuery = document.querySelector('#katalog-query');
 const katalogGrid = document.querySelector('.katalog-grid');
-const katalogItems = Array.from(katalogGrid.querySelectorAll('.item-katalog'));
+let katalogItems = [];
 const katalogTabs = Array.from(document.querySelectorAll('.katalog-tabs button'));
 const filterKategori = document.querySelector('#filter-kategori');
 const filterTahun = document.querySelector('#filter-tahun');
@@ -26,14 +26,41 @@ katalogTabs.forEach((tab) => {
   tab.setAttribute('aria-pressed', String(aktif));
 });
 
-// Gandakan data buku yang tersedia agar grid terisi 6 kolom selama 5 baris.
-const katalogItemsAwal = katalogItems.slice();
-for (let index = katalogItems.length; index < 30; index += 1) {
-  const sumber = katalogItemsAwal[index % katalogItemsAwal.length];
-  const duplikat = sumber.cloneNode(true);
-  katalogGrid.append(duplikat);
-  katalogItems.push(duplikat);
+let halamanAktif = 1;
+const jumlahPerHalaman = 30;
+
+function buatKartuKatalog(idBuku, buku) {
+  const artikel = document.createElement('article');
+  artikel.className = 'kartu-buku item-katalog';
+  artikel.dataset.id = idBuku;
+  artikel.dataset.tipe = 'buku';
+  artikel.dataset.kategori = buku.kategori.toLocaleLowerCase('id');
+  artikel.dataset.tahun = 'tidak-dicantumkan';
+  artikel.dataset.populer = String(Object.keys(window.dataBukuPerpustakaan).indexOf(idBuku) + 1);
+  artikel.dataset.judul = buku.judul;
+  artikel.dataset.pengarang = buku.pengarang;
+  artikel.innerHTML = `
+    <a class="tautan-detail-buku" href="detail-buku.html?id=${encodeURIComponent(idBuku)}">
+      <img src="${buku.sampul}" alt="Sampul ${buku.judul}">
+      <h3>${buku.judul}</h3>
+    </a>
+    <p class="penulis">${buku.pengarang}</p>
+    <div class="bawah-kartu">
+      <span class="status">Tersedia</span>
+      <div>
+        <button class="tombol-bulat aksi-favorit" type="button" data-aksi-favorit aria-label="Tambahkan ${buku.judul} ke favorit" aria-pressed="false">♡</button>
+        <button class="tombol-bulat oranye aksi-simpan" type="button" data-aksi-simpan aria-label="Simpan ${buku.judul} ke koleksi">+</button>
+      </div>
+    </div>`;
+  return artikel;
 }
+
+katalogGrid.replaceChildren();
+Object.entries(window.dataBukuPerpustakaan).forEach(([idBuku, buku]) => {
+  const kartu = buatKartuKatalog(idBuku, buku);
+  katalogGrid.append(kartu);
+  katalogItems.push(kartu);
+});
 
 function perbaruiKatalog() {
   const kataKunci = katalogQuery.value.trim().toLocaleLowerCase('id');
@@ -51,23 +78,55 @@ function perbaruiKatalog() {
     hasil.sort((a, b) => b.dataset.judul.localeCompare(a.dataset.judul, 'id'));
   }
 
+  const totalHalaman = Math.max(1, Math.ceil(hasil.length / jumlahPerHalaman));
+  halamanAktif = Math.min(halamanAktif, totalHalaman);
+  const awal = (halamanAktif - 1) * jumlahPerHalaman;
+  const hasilHalaman = hasil.slice(awal, awal + jumlahPerHalaman);
+
   katalogItems.forEach((item) => {
     item.hidden = !hasil.includes(item);
   });
-  hasil.forEach((item) => katalogGrid.append(item));
+  hasilHalaman.forEach((item) => {
+    item.hidden = false;
+    katalogGrid.append(item);
+  });
+  hasil.forEach((item) => {
+    if (!hasilHalaman.includes(item)) item.hidden = true;
+  });
   katalogJumlah.textContent = `${hasil.length} hasil ditemukan`;
   katalogKosong.hidden = hasil.length > 0;
+
+  const paginasi = document.querySelector('.katalog-paginasi');
+  if (paginasi) {
+    const [tombolSebelumnya, labelHalaman, tombolBerikutnya] = paginasi.children;
+    tombolSebelumnya.disabled = halamanAktif === 1;
+    tombolBerikutnya.disabled = halamanAktif === totalHalaman;
+    labelHalaman.textContent = `${halamanAktif} / ${totalHalaman}`;
+  }
 }
 
 katalogForm.addEventListener('submit', (event) => {
   event.preventDefault();
+  halamanAktif = 1;
   perbaruiKatalog();
 });
 
-katalogQuery.addEventListener('input', perbaruiKatalog);
-filterKategori.addEventListener('change', perbaruiKatalog);
-filterTahun.addEventListener('change', perbaruiKatalog);
-urutkanKatalog.addEventListener('change', perbaruiKatalog);
+katalogQuery.addEventListener('input', () => {
+  halamanAktif = 1;
+  perbaruiKatalog();
+});
+filterKategori.addEventListener('change', () => {
+  halamanAktif = 1;
+  perbaruiKatalog();
+});
+filterTahun.addEventListener('change', () => {
+  halamanAktif = 1;
+  perbaruiKatalog();
+});
+urutkanKatalog.addEventListener('change', () => {
+  halamanAktif = 1;
+  perbaruiKatalog();
+});
 
 katalogTabs.forEach((tab) => {
   tab.addEventListener('click', () => {
@@ -77,6 +136,7 @@ katalogTabs.forEach((tab) => {
       item.classList.toggle('aktif', aktif);
       item.setAttribute('aria-pressed', String(aktif));
     });
+    halamanAktif = 1;
     perbaruiKatalog();
   });
 });
@@ -90,8 +150,24 @@ document.querySelectorAll('.katalog-rekomendasi button').forEach((button) => {
       filterKategori.value = 'semua';
       katalogQuery.value = button.dataset.query;
     }
+    halamanAktif = 1;
     perbaruiKatalog();
   });
 });
+
+const paginasi = document.querySelector('.katalog-paginasi');
+if (paginasi) {
+  const [tombolSebelumnya, , tombolBerikutnya] = paginasi.children;
+  tombolSebelumnya.addEventListener('click', () => {
+    if (halamanAktif > 1) {
+      halamanAktif -= 1;
+      perbaruiKatalog();
+    }
+  });
+  tombolBerikutnya.addEventListener('click', () => {
+    halamanAktif += 1;
+    perbaruiKatalog();
+  });
+}
 
 perbaruiKatalog();

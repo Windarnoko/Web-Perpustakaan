@@ -4,16 +4,23 @@ const panahPopuler = document.querySelector('#panah-populer');
 const panahPopulerSebelumnya = document.querySelector('#panah-populer-sebelumnya');
 
 if (jalurPopuler && indikatorPopuler && panahPopuler && panahPopulerSebelumnya) {
-  const sumberBukuPopuler = Array.from(
-    jalurPopuler.querySelectorAll('.halaman-populer .sampul-populer')
-  );
-  const semuaBukuPopuler = Array.from({ length: sumberBukuPopuler.length * 3 }, (_, index) =>
-    sumberBukuPopuler[
-      (index % sumberBukuPopuler.length
-        + Math.floor(index / sumberBukuPopuler.length) * 2)
-      % sumberBukuPopuler.length
-    ].cloneNode(true)
-  );
+  const semuaBukuPopuler = Object.entries(window.dataBukuPerpustakaan).map(([idBuku, buku]) => {
+    const tautan = document.createElement('a');
+    tautan.className = 'sampul-populer tautan-detail-buku';
+    tautan.href = `html/detail-buku.html?id=${encodeURIComponent(idBuku)}`;
+    tautan.setAttribute('aria-label', `Buka detail ${buku.judul}`);
+
+    const gambar = document.createElement('img');
+    gambar.src = buku.sampul;
+    gambar.alt = `Sampul ${buku.judul}`;
+
+    const label = document.createElement('span');
+    label.className = 'buka-buku';
+    label.textContent = 'Buka';
+
+    tautan.append(gambar, label);
+    return tautan;
+  });
   let halamanPopuler = [];
   let jumlahBukuPerHalaman = 6;
   let halamanAktif = 0;
