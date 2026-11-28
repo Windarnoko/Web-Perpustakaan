@@ -145,7 +145,7 @@ window.dataBukuPerpustakaan = {
   'harry-potter-pangeran-berdarah': {
     judul: 'Harry Potter dan Pangeran Berdarah-Campuran',
     pengarang: 'J.K. Rowling',
-    sampul: urlSampulBuku('cover18.webp'),
+    sampul: urlSampulBuku('cover19.webp'),
     kategori: 'Fantasi',
     jenis: 'Buku Cetak'
   },
