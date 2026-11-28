@@ -221,6 +221,7 @@
 }
 
 .reservasi-field {
+  position: relative;
   min-width: 0;
   display: grid;
   gap: 7px;
@@ -244,6 +245,150 @@
 .reservasi-field select:focus-visible {
   border-color: #14579a;
   outline: 2px solid rgba(20, 87, 154, 0.18);
+}
+
+.tanggal-pengambilan-kontrol {
+  position: relative;
+  display: block;
+}
+
+.tanggal-pengambilan-kontrol #tanggal-pengambilan {
+  padding-right: 42px;
+  cursor: default;
+}
+
+.tombol-pilih-tanggal {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #303030;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.tombol-pilih-tanggal:hover,
+.tombol-pilih-tanggal:focus-visible {
+  background-color: #e8efff;
+  outline: 2px solid #14579a;
+}
+
+.tombol-pilih-tanggal svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.kalender-tanggal {
+  position: fixed;
+  inset: auto;
+  width: min(310px, calc(100vw - 24px));
+  max-height: calc(100vh - 24px);
+  margin: 0;
+  padding: 12px;
+  overflow: auto;
+  border: 1px solid #cbd3dd;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 30, 65, 0.18);
+}
+
+.kalender-tanggal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.kalender-tanggal-header strong {
+  color: #18395d;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.kalender-tanggal-header button,
+.kalender-tanggal-grid button {
+  min-width: 32px;
+  min-height: 32px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #303030;
+  cursor: pointer;
+  font: inherit;
+}
+
+.kalender-tanggal-header button:hover,
+.kalender-tanggal-header button:focus-visible,
+.kalender-tanggal-grid button:not(:disabled):hover,
+.kalender-tanggal-grid button:not(:disabled):focus-visible {
+  background-color: #e8efff;
+  outline: 2px solid #14579a;
+}
+
+.kalender-tanggal-header button:disabled {
+  color: #aaaaaa;
+  cursor: not-allowed;
+}
+
+.kalender-tanggal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 3px;
+  text-align: center;
+}
+
+.kalender-tanggal-grid > span {
+  display: grid;
+  min-height: 28px;
+  place-items: center;
+  color: #666666;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.kalender-tanggal-grid button {
+  width: 100%;
+  min-width: 0;
+  min-height: 34px;
+  font-size: 11px;
+}
+
+.kalender-tanggal-grid button:disabled {
+  color: #b6bcc4;
+  cursor: not-allowed;
+}
+
+.kalender-tanggal-grid button.hari-ini {
+  box-shadow: inset 0 0 0 1px #14579a;
+}
+
+.kalender-tanggal-grid button.terpilih {
+  background-color: #003366;
+  color: #ffffff;
+}
+
+.kalender-tanggal-grid button.terpilih:hover,
+.kalender-tanggal-grid button.terpilih:focus-visible {
+  background-color: #14579a;
+  color: #ffffff;
+}
+
+.tanggal-pengambilan-format {
+  min-height: 1.4em;
+  color: #555555;
+  font-size: 11px;
 }
 
 .reservasi-konfirmasi {

@@ -76,10 +76,41 @@
                   Ambil di perpustakaan
                 </label>
               </div>
-              <label class="reservasi-field" for="tanggal-pengambilan">
-                <span>Tanggal pengambilan</span>
-                <input id="tanggal-pengambilan" name="tanggal" type="date" required>
-              </label>
+              <div class="reservasi-field">
+                <span id="tanggal-pengambilan-label">Tanggal pengambilan</span>
+                <div class="tanggal-pengambilan-kontrol">
+                  <input
+                    id="tanggal-pengambilan"
+                    type="text"
+                    placeholder="dd/mm/yyyy"
+                    aria-hidden="true"
+                    tabindex="-1"
+                    readonly
+                  >
+                  <button
+                    class="tombol-pilih-tanggal"
+                    id="buka-kalender-tanggal"
+                    type="button"
+                    aria-label="Pilih tanggal pengambilan"
+                    aria-expanded="false"
+                    aria-controls="kalender-tanggal"
+                  >
+                    <svg aria-hidden="true" viewBox="0 0 24 24">
+                      <rect x="3.5" y="5" width="17" height="16" rx="2"></rect>
+                      <path d="M7.5 3v4M16.5 3v4M4 9.5h16"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="kalender-tanggal" id="kalender-tanggal" popover="manual">
+                  <div class="kalender-tanggal-header">
+                    <button id="bulan-sebelumnya" type="button" aria-label="Bulan sebelumnya">&lt;</button>
+                    <strong id="judul-bulan-kalender"></strong>
+                    <button id="bulan-berikutnya" type="button" aria-label="Bulan berikutnya">&gt;</button>
+                  </div>
+                  <div class="kalender-tanggal-grid" id="kalender-tanggal-grid" aria-label="Tanggal dalam bulan"></div>
+                </div>
+                <small class="tanggal-pengambilan-format" id="tanggal-pengambilan-format" aria-live="polite"></small>
+              </div>
               <label class="reservasi-field" for="lama-peminjaman">
                 <span>Lama peminjaman</span>
                 <select id="lama-peminjaman" name="durasi" required>

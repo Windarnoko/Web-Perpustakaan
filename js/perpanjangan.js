@@ -166,7 +166,7 @@ function render() {
   daftarPeminjamanElemen.querySelectorAll('.kartu-peminjaman').forEach((kartu) => kartu.remove());
   const adaPeminjaman = daftarPeminjaman.length > 0;
   peminjamanKosong.hidden = adaPeminjaman;
-  daftarPeminjaman.forEach((peminjaman) => {
+  daftarPeminjaman.slice().reverse().forEach((peminjaman) => {
     daftarPeminjamanElemen.appendChild(buatKartu(peminjaman));
   });
   renderPanel();
@@ -174,11 +174,12 @@ function render() {
 
 try {
   daftarPeminjaman = window.penyimpananPeminjaman.baca();
-  const pilihanDariURL = daftarPeminjaman.find((item) => item.id === idPeminjamanDiminta);
+  const daftarPeminjamanTerbaru = daftarPeminjaman.slice().reverse();
+  const pilihanDariURL = daftarPeminjamanTerbaru.find((item) => item.id === idPeminjamanDiminta);
   const pilihanAwal = pilihanDariURL
-    || daftarPeminjaman.find((item) =>
+    || daftarPeminjamanTerbaru.find((item) =>
       hitungSisaHari(item.jatuhTempo) >= 0 && item.sisaPerpanjangan > 0)
-    || daftarPeminjaman[0];
+    || daftarPeminjamanTerbaru[0];
   idPeminjamanDipilih = pilihanAwal ? pilihanAwal.id : null;
   render();
 } catch (error) {
