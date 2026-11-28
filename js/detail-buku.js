@@ -91,8 +91,8 @@ if (buku) {
   document.querySelector('#detail-buku-sampul').alt = `Sampul ${buku.judul}`;
   document.querySelector('#detail-buku-judul').textContent = buku.judul;
   linkReservasi.href = `reservasi.html?id=${encodeURIComponent(idBuku)}`;
-  document.querySelector('#detail-buku-meta').textContent =
-    `${buku.pengarang} · Tahun terbit belum dicantumkan`;
+   document.querySelector('#detail-buku-meta').textContent =
+    `${buku.pengarang} · ${buku.tahun || 'Tahun terbit belum dicantumkan'}`;
   document.querySelector('#detail-buku-sinopsis').textContent =
     sinopsisBuku[idBuku] || 'Sinopsis buku ini belum tersedia dalam katalog digital.';
 

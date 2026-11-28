@@ -521,3 +521,85 @@ window.dataBukuPerpustakaan = {
     jenis: 'Buku Cetak'
   }
 };
+const tahunBuku = {
+  'tokyo-zodiac': 1981,
+  'good-girl-murder': 2019,
+  'teka-teki-gambar-aneh': 2022,
+  'kasus-honjin': 1946,
+  'petaka-inugami': 1951,
+  'hantu-rumah-kos': 2017, // perkiraan
+  tujuh: 2023, // perkiraan
+  'kiri-sampai-sini': 2023, // perkiraan
+  pulang: 2015,
+  asterwood: 2017, // perkiraan
+  'sobotta-edisi-24': 2018, // perkiraan (edisi ke-24)
+  'sobotta-organ-interna': 2018, // perkiraan
+  'sobotta-anatomi-umum': 2018, // perkiraan
+  'pengantar-teknologi-informasi': 2021, // perkiraan
+  'laut-kecewa': 2017,
+  kalkulus: 2019, // perkiraan
+  'dasar-dasar-kalkulus': 2020, // perkiraan
+  'jan-shen': 2016, // perkiraan
+  'harry-potter-kamar-rahasia': 1998,
+  'harry-potter-orde-phoenix': 2003,
+  'harry-potter-pangeran-berdarah': 2005,
+  'harry-potter-tawanan-azkaban': 1999,
+  'harry-potter-piala-api': 2000,
+  'harry-potter-relikui-kematian': 2007,
+  'harry-potter-batu-bertuah': 1997,
+  'gadis-kretek': 2012,
+  'fisika-modern': 2019, // perkiraan
+  'filsafat-dan-filsafat-ilmu': 2021, // perkiraan
+  'filsafat-ilmu': 2004, // perkiraan
+  'enola-holmes': 2006,
+  dilan: 2014,
+  'dasar-dasar-teknik-informatika': 2022, // perkiraan
+  'kligo-higashino': 2018,
+  watersong: 2020,
+  'master-book-toefl': 2019, // perkiraan
+  'the-star-and-i': 2017, // perkiraan
+  'perfect-world-miwako-sumida': 2017,
+  'the-paper-magician': 2014,
+  'the-dragon-republic': 2019,
+  'teruslah-bodoh-jangan-pintar': 2024, // perkiraan
+  'pengantar-teori-ekonomi': 2009, // perkiraan
+  sumur: 2021,
+  'sherlock-holmes-koleksi-kasus-1': 1892, // perkiraan
+  'shadow-and-bone': 2012,
+  'second-sister': 2017,
+  'sang-keris': 2018, // perkiraan
+  'rumah-kaca': 1988,
+  'ronggeng-dukuh-paruk': 1982,
+  rainbirds: 2018,
+  'pulang-pergi': 2021,
+  'bahasa-prancis-itu-mudah': 2019, // perkiraan
+  'politik-partai-perempuan': 2019, // perkiraan
+  'politik-kebijakan-publik': 2020, // perkiraan
+  'pendosa-merindukan-tuhan': 2023, // perkiraan
+  'matematika-diskret': 2021, // perkiraan
+  'make-it-mine': 2022, // perkiraan
+  'makanya-mikir': 2022,
+  'lima-cerita': 2019, // perkiraan
+  legenda: 2021, // perkiraan
+  'belajar-bahasa-korea': 2020, // perkiraan
+  'bank-gaib': 2019, // perkiraan
+  'simple-book-bahasa-jerman': 2020, // perkiraan
+  'kuasai-bahasa-jepang-n5': 2019, // perkiraan
+  'pengantar-ilmu-ekonomi': 2019, // perkiraan
+  'ielts-academic-16': 2021,
+  'fisika-dasar-1': 2018, // perkiraan
+  'filosofi-teras': 2018,
+  carstenz: 2022, // perkiraan
+  'cake-shop': 2021, // perkiraan
+  'cake-shop-extended': 2022, // perkiraan
+  'belajar-bahasa-inggris': 2020, // perkiraan
+  'bahasa-indonesia-menulis': 2021, // perkiraan
+  'anonymous-crush': 2020, // perkiraan
+  aku: 2013 // perkiraan
+};
+
+Object.entries(tahunBuku).forEach(([id, tahun]) => {
+  if (window.dataBukuPerpustakaan[id]) {
+    window.dataBukuPerpustakaan[id].tahun = tahun;
+  }
+});
